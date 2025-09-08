@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+main{
+    display: flex;
+    justify-content: center;
+
+
+}
+.main-main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    text-align: center;
+
+}
+
+.side-button{
+    margin: 10px;
+    padding: 5px;
+    background-color: blueviolet;
+    font-size: large;
+    border-style: dashed;
+    border-width: 100px;
+    border: purple;
+    border-radius: 10px;
+
+
+}
