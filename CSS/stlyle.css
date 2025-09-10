@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Sixtyfour:wght@100;300;400;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+
+}
 body{
     margin: 0;
     padding: 0;
-    background-image: url(background.1920.1080.jpg);
+    background-image: url(/content/background.1920.1080.jpg);
     background-position: -200px 0px;
+    background-attachment: fixed;
     font-family: sixtyfour;
     color: rgb(255, 179, 254);
-    --
-    text-shadow: rgb(54, 87, 140);
+    --blå: rgb(54, 87, 140);
+    /* text-shadow: -2px -2px 0 var(--blå),-2px 2px 0 var(--blå),2px 2px 0 var(--blå); */
 }
 
-.temp{
+.main-main-main{
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -25,22 +31,13 @@ main{
     gap: 10px;
 }
 
-main img{
+.head img{
+    margin: 5%;
+    height: 150px;
     outline: 2px solid #ff80ff;
     outline-offset: 12px;
-    margin: 1%;
-    height: 150px;
-}
-h1{
-    font-size: 500%;
-    text-align: center;
-
 }
 
-.main-main img{
-    border-radius: 100%;
-
-}
 .main-main{
     background-color: rgb(138, 43, 226, 0.5);
     border-width: 5px;
@@ -51,6 +48,11 @@ h1{
     width: 45%;
     text-align: center;
 
+    img{
+        height: 100px;
+        border-radius: 10%;
+
+    }
 }
 
 .side-button{
@@ -58,23 +60,31 @@ h1{
     padding: 5px;
     background-color: blueviolet;
     font-size: large;
-    border-style: dashed;
-    border-width: 100px;
-    border: purple;
     border-radius: 10px;
-
-
+    
 }
 
 .main-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 10%;
     width: 10%;
+     
+    img{
+        object-fit: contain;
+        outline: none;
+    }
 }
 
 .intro{
     display: flex;
     flex-direction: row;
     
+    img{
+        margin: 20px;
+
+    }
     p{
     background-color: rgb(138, 43, 226, 0.5);
     padding: 5px;
@@ -83,4 +93,10 @@ h1{
     border-radius: 10%;
     border-style: dashed;
     }
+}
+
+.celeste{
+    display: flex;
+    flex-direction: row;
+
 }
