@@ -5,6 +5,9 @@ body{
     background-image: url(background.1920.1080.jpg);
     background-position: -200px 0px;
     font-family: sixtyfour;
+    color: rgb(255, 179, 254);
+    --
+    text-shadow: rgb(54, 87, 140);
 }
 
 .temp{
@@ -19,13 +22,14 @@ main{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
 main img{
     outline: 2px solid #ff80ff;
     outline-offset: 12px;
     margin: 1%;
-    height: 200px;
+    height: 150px;
 }
 h1{
     font-size: 500%;
@@ -44,7 +48,7 @@ h1{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 30%;
+    width: 45%;
     text-align: center;
 
 }
@@ -67,7 +71,16 @@ h1{
     width: 10%;
 }
 
-.title{
-    flex
-
+.intro{
+    display: flex;
+    flex-direction: row;
+    
+    p{
+    background-color: rgb(138, 43, 226, 0.5);
+    padding: 5px;
+    margin: 10px;
+    border: #ff80ff;
+    border-radius: 10%;
+    border-style: dashed;
+    }
 }
