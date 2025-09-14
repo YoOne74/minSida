@@ -5,37 +5,41 @@
 body{
     background-image: url(/content/bakgrund/background1.png);
     background-size: 150%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    background-attachment: fixed;
 }
 
 .title{
     display: flex;
     justify-content: center;
-
     img{
         padding-top: 5%;
-        width: 50%;
+        height: 300px;
     
     }
 
 }
 
-.background{
-
-
-}
 #bakgrund1{
-    position: absolute;
-    z-index: 1;
-    top: -120px
+    display: block;
+    position: fixed;
+    z-index: 0;
+    top: -120px;
+
+    img{
+        width: 120%;
+
+    }
     
 }
 #bakgrund2{
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 0;
     top: +150px;
+
+    img{
+        width: 120%;
+
+    }
 }
 
 
@@ -43,13 +47,14 @@ body{
     display: flex;
     justify-content: center; 
     align-items: center;
+    flex-direction: column;
 
 }
 .center{
     height: 100%;
-    z-index: 3;
+    z-index: 1;
     border: 10%;
-    border-radius: 5%;
+    border-radius: 2%;
     border-style:solid;
     border-color: aliceblue;
     background-color: rgba(9, 2, 15, 0.623);
@@ -57,11 +62,28 @@ body{
     width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: end;
     margin: 5%;
     padding: 5%;
 }
 
 .header{
-    height: 100px;
+    height: 20px;
+    z-index: 1;
+
+}
+
+.home{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    img{
+        aspect-ratio: 1;
+        height: 40px;
+
+    }
+
+
 
 }
