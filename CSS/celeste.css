@@ -12,11 +12,9 @@ body{
     display: flex;
     justify-content: center;
     img{
-        padding-top: 5%;
-        height: 300px;
-    
+        padding-top: 2%;
+        height: 200px;
     }
-
 }
 
 #bakgrund1{
@@ -24,7 +22,6 @@ body{
     position: fixed;
     z-index: 0;
     top: -120px;
-
     img{
         width: 120%;
 
@@ -35,7 +32,6 @@ body{
     position: fixed;
     z-index: 0;
     top: +150px;
-
     img{
         width: 120%;
 
@@ -44,28 +40,64 @@ body{
 
 
 .info{
+    width: 800px;
     display: flex;
     justify-content: center; 
-    align-items: center;
-    flex-direction: column;
-
+    flex-direction: row;
+    /* flex-wrap: wrap; */
 }
-.center{
-    height: 100%;
+
+
+.bild{
+    width: 200px;
+    height: 200px;
     z-index: 1;
-    border: 10%;
-    border-radius: 2%;
-    border-style:solid;
-    border-color: aliceblue;
+    object-fit: contain;
+    border: 2px solid aliceblue;
+    border-radius: 5px 5px 5px 5px;
     background-color: rgba(9, 2, 15, 0.623);
     color: white;
-    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    margin: 5%;
-    padding: 5%;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
 }
+
+.bild2{
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    object-fit: contain;
+    border: 2px solid aliceblue;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgba(9, 2, 15, 0.623);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
+
+}
+
+.about{
+    flex-grow: 2;
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    object-fit: contain;
+    border: 2px solid aliceblue;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgba(9, 2, 15, 0.623);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
+
+}   
 
 .header{
     height: 20px;
@@ -83,7 +115,4 @@ body{
         height: 40px;
 
     }
-
-
-
 }
