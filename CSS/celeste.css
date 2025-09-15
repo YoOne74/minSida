@@ -40,11 +40,19 @@ body{
 
 
 .info{
-    width: 800px;
     display: flex;
     justify-content: center; 
-    flex-direction: row;
-    /* flex-wrap: wrap; */
+    align-items: center;
+}
+
+.container2{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
+}
+.about {
+    flex-grow: 0 !important; 
 }
 
 
