@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(../content/background.1920.1080.jpg);
+  background-image: url(/content/bakgrund/background.1920.1080.jpg);
   background-position: -200px 0px;
   background-attachment: fixed;
   font-family: sixtyfour;
