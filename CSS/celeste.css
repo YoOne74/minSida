@@ -1,126 +1,164 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    background-image: url(/content/bakgrund/background1.png);
-    background-size: 150%;
-    background-attachment: fixed;
+body {
+  background-image: url(/content/bakgrund/background1.png);
+  background-size: 150%;
+  background-attachment: fixed;
 }
 
-.title{
-    display: flex;
-    justify-content: center;
-    img{
-        padding-top: 2%;
-        height: 200px;
-    }
+.title {
+  display: flex;
+  justify-content: center;
+  img {
+    padding-top: 2%;
+    height: 200px;
+  }
 }
 
-#bakgrund1{
-    display: block;
-    position: fixed;
-    z-index: 0;
-    top: -120px;
-    img{
-        width: 120%;
-
-    }
-    
-}
-#bakgrund2{
-    position: fixed;
-    z-index: 0;
-    top: +150px;
-    img{
-        width: 120%;
-
-    }
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-90%, 0, 0);
+  }
 }
 
-
-.info{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+#bakgrund1 {
+  background-image: url("/content/bakgrund/background2.png");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  width: 1000%;
+  height: 100%;
+  opacity: 0.85;
+  position: fixed;
+  left: -50px;
+  top: -100px;
+  z-index: -1;
+  animation: slide 4000s linear infinite;
 }
 
-.container2{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-
+#bakgrund2 {
+  background-image: url("/content/bakgrund/background3.png");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  width: 1000%;
+  height: 100%;
+  opacity: 1;
+  position: fixed;
+  left: -50px;
+  top: 100px;
+  z-index: -1;
+  animation: slide 5000s linear infinite;
 }
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 80vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.info {
+  width: 55vw;
+
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.handlar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bild {
+  height: 200px;
+
+  z-index: 1;
+  object-fit: contain;
+
+  border: 2px solid aliceblue;
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgba(9, 2, 15, 0.623);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 1%;
+  padding: 1%;
+
+  img {
+    height: 180px;
+  }
+}
+
 .about {
-    flex-grow: 0 !important; 
+  z-index: 1;
+
+  object-fit: cover;
+
+  border: 2px solid aliceblue;
+  border-radius: 5px 5px 5px 5px;
+
+  background-color: rgba(9, 2, 15, 0.623);
+
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1%;
+  padding: 1%;
 }
 
+.h {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-.bild{
-    width: 200px;
-    height: 200px;
-    z-index: 1;
-    object-fit: contain;
-    border: 2px solid aliceblue;
-    border-radius: 5px 5px 5px 5px;
-    background-color: rgba(9, 2, 15, 0.623);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1%;
-    padding: 1%;
+  h1 {
+    text-align: center;
+  }
+  
+  img {
+    position: relative;
+
+    top: -50px;
+    left: 200px;
+
+    height: 15vh;
+  }
+}
+.header {
+  height: 20px;
+  z-index: 1;
 }
 
-.bild2{
-    width: 200px;
-    height: 200px;
-    z-index: 1;
-    object-fit: contain;
-    border: 2px solid aliceblue;
-    border-radius: 5px 5px 5px 5px;
-    background-color: rgba(9, 2, 15, 0.623);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1%;
-    padding: 1%;
+.home {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
 
-}
-
-.about{
-    flex-grow: 2;
-    width: 200px;
-    height: 200px;
-    z-index: 1;
-    object-fit: contain;
-    border: 2px solid aliceblue;
-    border-radius: 5px 5px 5px 5px;
-    background-color: rgba(9, 2, 15, 0.623);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1%;
-    padding: 1%;
-
-}   
-
-.header{
-    height: 20px;
-    z-index: 1;
-
-}
-
-.home{
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-
-    img{
-        aspect-ratio: 1;
-        height: 40px;
-
-    }
+  img {
+    aspect-ratio: 1;
+    height: 40px;
+  }
 }
