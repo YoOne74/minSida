@@ -51,7 +51,7 @@ body {
   left: -50px;
   top: -100px;
   z-index: -1;
-  animation: slide 4000s linear infinite;
+  animation: slide 1000s linear infinite;
 }
 
 #bakgrund2 {
@@ -65,7 +65,7 @@ body {
   left: -50px;
   top: 100px;
   z-index: -1;
-  animation: slide 5000s linear infinite;
+  animation: slide 2000s linear infinite;
 }
 
 main {
@@ -116,6 +116,8 @@ main {
   margin-top: 2vh;
   margin-bottom: 2vh;
 
+  text-align: center;
+
   z-index: 1;
 
   object-fit: cover;
@@ -127,30 +129,28 @@ main {
 
   margin: 1%;
   padding: 1%;
-}
-
-.h {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 
   position: relative;
 
-  h1 {
-    text-align: center;
-  }
+  color: white;
+
+  font-size: 1.1rem;
 
   img {
+    position: relative;
     position: absolute;
 
-    bottom: 0px;
+    bottom: 120px;
     right: 0px;
 
     height: 15vh;
   }
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
 }
+
 .header {
   height: 20px;
   z-index: 1;
@@ -169,21 +169,6 @@ main {
   }
 }
 
-.txt {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  color: white;
-
-  font-size: 1.1rem;
-
-  h1 {
-    margin-top: 0px;
-    margin-bottom: 5px;
-  }
-}
-
 .bildPar {
   width: 100vw;
 
@@ -197,10 +182,35 @@ main {
   position: absolute;
 
   z-index: 10;
-  height: 150px;
+  height: 7vh;
 
   top: -110px;
   left: 0;
 
   animation: bob 2s ease-in-out infinite;
+}
+
+
+#yapp{
+  flex-direction: row;
+  text-align: left;
+  height: 280px;
+
+  position: relative;
+
+  p{
+    width: 70%;
+  }
+
+  h1{
+    text-align: center;
+
+  }
+  img{
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    height: 10vh;
+  }
+
 }
