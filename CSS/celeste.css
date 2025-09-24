@@ -17,6 +17,20 @@ body {
   }
 }
 
+@keyframes bob {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes slide {
   0% {
     transform: translate3d(0, 0, 0);
@@ -60,35 +74,22 @@ main {
 }
 
 .wrapper {
-  width: 80vw;
+  width: 50vw;
 
   display: flex;
   justify-content: center;
-  align-items: start;
   flex-wrap: wrap;
-}
-
-.info {
-  width: 55vw;
-
-  display: flex;
-
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 2vh;
-  margin-bottom: 2vh;
 }
 
 .handlar {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
 .bild {
-  height: 200px;
+  height: 300px;
 
   z-index: 1;
   object-fit: contain;
@@ -110,6 +111,11 @@ main {
   }
 }
 .about {
+  height: 170px;
+  width: 50vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
   z-index: 1;
 
   object-fit: cover;
@@ -119,11 +125,6 @@ main {
 
   background-color: rgba(9, 2, 15, 0.623);
 
-  color: white;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   margin: 1%;
   padding: 1%;
 }
@@ -132,16 +133,20 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  position: relative;
 
   h1 {
     text-align: center;
   }
 
   img {
-    position: relative;
+    position: absolute;
 
-    top: -50px;
-    left: 200px;
+    bottom: 0px;
+    right: 0px;
 
     height: 15vh;
   }
@@ -156,8 +161,46 @@ main {
   bottom: 20px;
   left: 20px;
 
+  a {
+    margin: 0;
+  }
   img {
-    aspect-ratio: 1;
     height: 40px;
   }
+}
+
+.txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 1.1rem;
+
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+}
+
+.bildPar {
+  width: 100vw;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+#goldBerry {
+  position: absolute;
+
+  z-index: 10;
+  height: 150px;
+
+  top: -110px;
+  left: 0;
+
+  animation: bob 2s ease-in-out infinite;
 }
