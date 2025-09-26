@@ -1,7 +1,11 @@
 * {
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: "Pixelify";
+  src: url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+}
+/* @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"); */
 @keyframes bob {
   0% {
     transform: translateY(0);
@@ -54,6 +58,7 @@
 }
 
 body {
+  font-family: Pixelify;
   background-image: url("../content/bakgrund/background1.png");
   background-size: 150%;
   background-attachment: fixed;
@@ -190,25 +195,27 @@ main {
 
 #golden {
   display: flex;
-  justify-content: end;
+  justify-content: flex-start;
+  height: 250px;
 
-  img{
+  img {
     animation: bob 2s ease-in-out infinite;
-    height: 20%;
-
+    height: 90%;
   }
 }
 
-.txt {
-  width: 300px;
+#stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#statSmall {
+  height: 100px;
+}
 
-  p {
-    width: 70%;
-  }
-
-  h1 {
-    width: 10px;
-  }
+#golden .txt {
+  width: 70%;
 }
 #home {
   position: fixed;
