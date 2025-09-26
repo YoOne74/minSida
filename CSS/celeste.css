@@ -189,36 +189,32 @@ main {
 }
 
 #golden {
-  position: relative;
-
   display: flex;
   justify-content: end;
+
+  img{
+    animation: bob 2s ease-in-out infinite;
+    height: 20%;
+
+  }
+}
+
+.txt {
+  width: 300px;
 
   p {
     width: 70%;
   }
 
-  img {
-    /* position: absolute; */
-
-    animation: bob 2s ease-in-out infinite;
-
-    height: 10vh;
-    top: 0;
-    left: 0;
+  h1 {
+    width: 10px;
   }
 }
-
-.txt {
-}
-.home {
+#home {
   position: fixed;
   bottom: 20px;
   left: 20px;
 
-  a {
-    margin: 0;
-  }
   img {
     height: 40px;
   }
