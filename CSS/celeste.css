@@ -226,3 +226,11 @@ main {
     height: 40px;
   }
 }
+#heart{
+  rotate: -20deg;
+  z-index: 1;
+  left: 0%;
+  height: 30%;
+  position: absolute;
+
+}
