@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+@keyframes growIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes txtFin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: "ccmeanwhile", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.in {
+  animation: growIn 20s ease 0s normal forwards;
+}
+
+#txt {
+  font-size: large;
+  position: absolute;
+  opacity: 0;
+  background-color: white;
+  animation: txtFin 5s ease 15s 1 normal forwards;
+}
