@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(49, 49, 49);
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  background-color: blueviolet;
+  position: relative;
+  animation: infinite move-cube 2s ease-in-out;
+}
+
+.animation-container {
+  width: 50vw;
+  height: 50vh;
+  background-color: rgb(31, 31, 31);
+  margin: 0 auto;
+}
+
+@keyframes move-cube {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  50% {
+    top: 0;
+    left: calc(100% - 200px);
+    background-color: aqua;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    background-color: blueviolet;
+  }
+}
+
+
+#home {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+
+  img {
+    height: 40px;
+  }
+}
