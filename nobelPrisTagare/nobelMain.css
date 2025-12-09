@@ -2,11 +2,18 @@
   --primary-bg-color: rgb(30, 30, 28);
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 * {
   background-color: var(--primary-bg-color);
   color: rgb(255, 255, 255);
 
   body {
+
+    overflow-x: hidden;
+
     box-sizing: border-box;
 
     header {

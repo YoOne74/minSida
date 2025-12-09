@@ -89,6 +89,12 @@ nav {
   transform: scale(1.1);
 }
 
+#side-title{
+  padding: 1px;
+  margin: 5px;
+
+}
+
 .intro {
   display: flex;
   flex-direction: row;
