@@ -6,8 +6,9 @@
 body {
   margin: 0;
   padding: 0;
-/* kanske funkar det nuuuuu???? */
+  /* kanske funkar det nuuuuu???? */
   background: url("../../shared/background.1920.1080.jpg");
+  image-rendering: pixelated;
   background-position: -200px 0px;
   background-attachment: fixed;
   font-family: sixtyfour;
@@ -89,10 +90,9 @@ nav {
   transform: scale(1.1);
 }
 
-#side-title{
+#side-title {
   padding: 1px;
   margin: 5px;
-
 }
 
 .intro {

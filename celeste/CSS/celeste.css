@@ -216,15 +216,7 @@ main {
 #golden .txt {
   width: 70%;
 }
-#home {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
 
-  img {
-    height: 40px;
-  }
-}
 #heart {
   rotate: -20deg;
   z-index: 1;
