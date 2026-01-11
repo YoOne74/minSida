@@ -8,95 +8,47 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
+  background-color: #0d1117;
+  color: white;
 
   header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background: linear-gradient(0deg, #000000 0%, #000000 21%, #ffffff 100%);
-
-    width: 100vw;
-    height: 130vh;
-
-    padding-top: -10vh;
-
-    font-size: xx-large;
+    margin-top: 5%;
     text-align: center;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    p {
-      width: 50%;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
+    font-family: Sixtyfour;
   }
 
-  #internetHistoriaMainWrapper {
-    background-color: aliceblue;
-
-    .internetsHistoriaBlockLeft {
-      display: flex;
-      flex-direction: row;
-
-      width: 100%;
-
-      .internetsHistoriaBlockLeftImage {
-        width: 50%;
-        img {
-          width: 100%;
-        }
-      }
-      .internetHistoriaBlockLeftText {
-        width: 50%;
-      }
+  #toc {
+    position: sticky;
+    list-style-type: none;
+    font-family: arial;
+    li {
+      margin: 5px;
     }
 
-    .internetHistoriaBlockRight {
-      display: flex;
-      flex-direction: row-reverse;
-      .internetsHistoriaBlockRightImage {
-        width: 50%;
-        img {
-          width: 100%;
-        }
-      }
-      .internetHistoriaBlockRightText {
-        width: 50%;
-      }
-    }
-    #internet1970 {
-      font-family: Sixtyfour;
-    }
-    #internet1960 {
-      background-color: black;
-      font-family: Sixtyfour Convergence;
+    /* unvisited link */
+    a:link {
+      color: rgb(255, 255, 255);
     }
 
-    #internet1980 {
-      height: 100vh;
-      width: 100vw;
+    /* visited link */
+    a:visited {
+      color: rgb(248, 47, 255);
+    }
 
-      font-family: monocraft;
+    /* mouse over link */
+    a:hover {
+      color: rgb(255, 0, 212);
+    }
 
-      background-color: black;
-
-      overflow-y: scroll;
-
-      display: flex;
-      justify-content: center;
-
-      #internet1980Text {
-        font-size: xx-large;
-        color: chartreuse;
-        width: 80vw;
-        height: 150vh;
-      }
+    /* selected link */
+    a:active {
+      color: rgb(230, 0, 255);
     }
   }
 }
