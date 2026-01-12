@@ -16,39 +16,44 @@ body {
   padding: 0;
   background-color: #0d1117;
   color: white;
+  a:link {
+    color: rgb(255, 255, 255);
+  }
 
+  /* visited link */
+  a:visited {
+    color: rgb(248, 47, 255);
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: rgb(255, 0, 212);
+  }
+
+  /* selected link */
+  a:active {
+    color: rgb(230, 0, 255);
+  }
   header {
     margin-top: 5%;
     text-align: center;
     font-family: Sixtyfour;
   }
-
+  #md {
+    h1,
+    h2,
+    h3 {
+      text-align: center;
+    }
+  }
   #toc {
     position: sticky;
     list-style-type: none;
-    font-family: arial;
+    font-family: sixtyfour;
     li {
       margin: 5px;
     }
 
     /* unvisited link */
-    a:link {
-      color: rgb(255, 255, 255);
-    }
-
-    /* visited link */
-    a:visited {
-      color: rgb(248, 47, 255);
-    }
-
-    /* mouse over link */
-    a:hover {
-      color: rgb(255, 0, 212);
-    }
-
-    /* selected link */
-    a:active {
-      color: rgb(230, 0, 255);
-    }
   }
 }

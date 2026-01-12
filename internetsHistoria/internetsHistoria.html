@@ -13,7 +13,11 @@
 
   <body>
     <header>
-      <h1 style="font-size: 80px; margin-bottom: 1vh">INTERNETS HISTORIA!</h1>
+      <h1
+        style="font-size: 80px; margin-bottom: 1vh; width: 100vw; height: 10vh"
+      >
+        INTERNETS HISTORIA!
+      </h1>
       <p
         style="
           width: 40vw;
@@ -27,18 +31,22 @@
         dessa kan du hoppa mellan genom att klicka på nummrerna i sidan!
       </p>
     </header>
-    <div
-      style="display: flex; flex-direction: row-reverse"
-      class="tempContainer"
-    >
+    <div class="wrapper" style="height: 1000vh">
       <zero-md
         id="md"
-        style="width: 40vw; margin: auto"
+        style="width: 40vw; margin-left: 30vw; position: absolute"
         src="content/Internet historia.md"
       ></zero-md>
 
       <div
-        style="position: sticky; right: 20px; top: 0; height: 20vh"
+        style="
+          position: sticky;
+          right: 20px;
+          top: 0;
+          overflow: hidden;
+          height: 100vh;
+          width: 20vw;
+        "
         class="toc-container"
       >
         <ul id="toc"></ul>
@@ -59,14 +67,14 @@
       const toc = document.getElementById("toc");
 
       md.addEventListener("zero-md-rendered", () => {
-        const headings = md.shadowRoot.querySelectorAll(
-          "h1, h2, h3, h4, h5, h6"
-        );
+        const headings = md.shadowRoot.querySelectorAll("h1, h2, h3");
 
         headings.forEach((heading, index) => {
           if (!heading.id) {
             heading.id = "heading-" + index;
           }
+
+          heading.style = "text-align: center";
 
           const level = parseInt(heading.tagName.substring(1)); // 1–6
 
