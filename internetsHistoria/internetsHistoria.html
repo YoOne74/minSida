@@ -36,7 +36,13 @@
         id="md"
         style="width: 40vw; margin-left: 30vw; position: absolute"
         src="content/Internet historia.md"
-      ></zero-md>
+      >
+        <template data-append>
+          <style>
+
+          </style>
+        </template>
+      </zero-md>
 
       <div
         style="
@@ -63,9 +69,16 @@
       </a>
     </div>
     <script>
+      //Hela den här funktionen skapar TOC som finns vid vänster
+
       const md = document.getElementById("md");
       const toc = document.getElementById("toc");
 
+      //Väntar tills zero-md är klar med att rendera markdown filen
+      //Sedan loopar man igenom varje h1,h2,h3 tar dess id
+      // använder det som text kontent och lägger till det i en lista,
+      // använder också vilken nivå man är på för att se till att
+      // dem indenteras
       md.addEventListener("zero-md-rendered", () => {
         const headings = md.shadowRoot.querySelectorAll("h1, h2, h3");
 
@@ -74,9 +87,9 @@
             heading.id = "heading-" + index;
           }
 
-          heading.style = "text-align: center";
-
           const level = parseInt(heading.tagName.substring(1)); // 1–6
+
+          heading.style = "text-align: center";
 
           const li = document.createElement("li");
           li.dataset.level = level;
@@ -89,6 +102,7 @@
 
           const indent = (level - 1) * 12;
           li.style.marginLeft = `${indent}px`;
+          
 
           toc.appendChild(li);
         });

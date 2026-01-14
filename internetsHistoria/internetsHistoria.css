@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Sixtyfour:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=Sixtyfour+Convergence&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+.mona-sans {
+  font-family: "Mona Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
 @font-face {
   font-family: monocraft;
@@ -22,7 +33,7 @@ body {
 
   /* visited link */
   a:visited {
-    color: rgb(248, 47, 255);
+    color: rgb(158, 158, 158);
   }
 
   /* mouse over link */
@@ -39,17 +50,16 @@ body {
     text-align: center;
     font-family: Sixtyfour;
   }
-  #md {
-    h1,
-    h2,
-    h3 {
-      text-align: center;
-    }
-  }
   #toc {
     position: sticky;
     list-style-type: none;
-    font-family: sixtyfour;
+    font-size: large;
+    font-family: mona sans;
+
+    a{
+      text-decoration: none;
+
+    }
     li {
       margin: 5px;
     }
