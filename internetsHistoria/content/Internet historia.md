@@ -8,7 +8,7 @@ Första gången en dator i ett nätverk kommunicerade med en annan i ett helt an
 Arpanet är inte ensamt om att ha strul i sina tidigaste stunder men vissa kom aldrig riktigt längre än såna där haltande steg:
 ### Ogas
 
-Sovjetunionen hade sitt OGAS, ett system som skulle hjälpa staten med dess planekonomi genom att koppla samman alla fabriker i hela unionen till Moskva, så man kan hålla koll på vilken/vilka som producerar vad och hur mycket. Viktor Glushkov OGAS grundare fick dock aldrig nog med stöd från staten och projektet fisslade ut efter 8 korta år. 
+Sovjetunionen hade sitt OGAS, ett system som skulle hjälpa staten med dess planekonomi genom att koppla samman alla fabriker i hela unionen till Moskva, så man kan hålla koll på vilken/vilka som producerar vad och hur mycket. Viktor Glushkov OGAS grundare fick dock aldrig nog med stöd från staten och projektet fisslade ut efter 107 korta år. 
 
 ### Cybersyn
 
