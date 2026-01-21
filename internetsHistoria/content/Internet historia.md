@@ -142,8 +142,8 @@ När pandemin började så blev det helt plötsligt en fråga om nationens häls
 
 AI AI AI, jag tror att om du är ens är lite som mig är du så jävligt trött på att höra just dem två bokstäverna i den ordningen. Överallt man går så trycks generativ AI ner ens hals vare sig man vill eller inte. Därför tänker jag inte prata något mer om ai, istället kan du titta på den här bilden på min pojkvän med gulliga Rudolf!:
 
-<img src="20251229_153932.jpg">
-![[20251229_153932.jpg]]
+<img src="content/alexOrudolf.jpg">
+
 
 
 ### Fiaskon
