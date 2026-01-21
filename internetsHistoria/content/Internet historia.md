@@ -1,18 +1,18 @@
 
 # 1960
 
-Innan jag kan börja skriva om internets historia är det kanske bra om jag går igenom vad internet är. Internet helt enkelt ett nätverk av flera nätverk (**Inter**connected **net**work) Vilket betyder att datorer kan prata med varandra trots att de inte är direkt sammankopplade. Datorer har kunnat kommunicera med varandra på en nätverksnivå sedan datorer först kom, (eh inte riktigt men typ)
+Innan jag kan börja skriva om internets historia är det kanske bra om jag går igenom vad internet är. Internet helt enkelt ett nätverk av flera nätverk (**Inter**connected **net**work) Vilket betyder att datorer kan prata med varandra trots att de inte är direkt sammankopplade. Datorer har kunnat kommunicera med varandra på en nätverksnivå sedan datorer först kom, men det nya med internet är just sammankopplingen av sammankopplingar.
 
-Första gången då när en dator i ett nätverk kommunicerade med en annan i ett helt annat nätverk var 29 oktober 1969 då forskare på UCLA började skicka meddelandet LOGIN till en annan dator på Stanford, men systemet kraschade efter bara ett L och ett O skickas. Detta så kallade Arpanet är skapat av det amerikanska försvarets forsknings institut **ARPA**.
+Första gången en dator i ett nätverk kommunicerade med en annan i ett helt annat nätverk var 29 oktober 1969 då forskare på UCLA började skicka meddelandet LOGIN till en annan dator på Stanford, men systemet kraschade efter bara ett L och ett O skickas. Detta så kallade Arpanet är skapat av det amerikanska försvarets forsknings institut **ARPA**.
 
-Arpanet är inte ensamt om att ha strul i sina tidigaste stunder men vissa kom aldrig riktigt längre än såna här haltande steg:
+Arpanet är inte ensamt om att ha strul i sina tidigaste stunder men vissa kom aldrig riktigt längre än såna där haltande steg:
 ### Ogas
 
-Sovjetunionen hade sitt OGAS, ett system skulle hjälpa staten med dess planekonomi genom att koppla samman alla fabriker i hela unionen till Moskva, så man kan hålla koll på vilken/vilka som producerar vad och hur mycket. Viktor Glushkov OGAS grundare fick dock aldrig nog med stat från staten och projektet fisslade ut efter 8 korta år. 
+Sovjetunionen hade sitt OGAS, ett system som skulle hjälpa staten med dess planekonomi genom att koppla samman alla fabriker i hela unionen till Moskva, så man kan hålla koll på vilken/vilka som producerar vad och hur mycket. Viktor Glushkov OGAS grundare fick dock aldrig nog med stöd från staten och projektet fisslade ut efter 8 korta år. 
 
 ### Cybersyn
 
-Chiles premiärminister hade en mycket liknande idée om att skapa en säkrare och starkare stat genom att centralisera och kommunicera ut i landet med sammanlänkade dator system. Igen lyckades systemet aldrig riktigt komma igång då en revolution två år in i projektet lämnade dess kontrollrum i spillror (bokstavligt talat då rummet förstördes då man störtade premiärministern)
+Chiles premiärminister hade en mycket liknande idée om att skapa en säkrare och starkare stat genom att centralisera och kommunicera ut i landet med ett sammanlänkat datorsystem. Igen lyckades systemet aldrig riktigt komma igång då en revolution två år in i projektets gång lämnade dess kontrollrum i spillror (bokstavligt talat då rummet förstördes då man störtade premiärministern)
 
 #### Källor:
 
@@ -21,7 +21,7 @@ Chiles premiärminister hade en mycket liknande idée om att skapa en säkrare o
 
 # 1970
 
-<p style="font-size:large"> 70-talet såg en fortsatt utveckling av dem system som internet är byggt på och mängden användare växer sakta men säkert.  <p/>
+<p style="font-size:large"> 70-talet ser en fortsatt utveckling av dem system som internet är byggt på och mängden användare växer sakta men säkert.  Kanske vikitgast läggs grunden för internet, ett system som används än idag.<p/>
 
 1971 Skickas världens första mejl, från höger in till Ray Tomlinson, mejlets avsändare, till vänster om Ray Tomlinson. Ett mejl skickat inte mer än 2 meter kanske inte låter så fantastiskt och det är så att man har haft möjligheten till att skicka meddelanden på datorer förr, men endast mellan användare på samma dator. 
 	Tomlinson kan du också tacka för att @ symbolen ens finns på ditt tangentbord. Han är den som kommer på idéen om att använda user@computer för identifiera vem man vill skicka till, något du definitivt känner till än idag.
@@ -39,7 +39,6 @@ Du kan också se din genom. att trycka WIN+R och sen skriva cmd. Vänta på att 
 På grund av dem olika säkerhets brister jag har nämnt tidigare lanseras 1976 en konkurrent: System X.25. När Information skickas med System X.25 så kontrolleras den varje steg och man kan vara säker på att den kommer fram intakt och oförändrad. Dessutom låter denna favorit av Teleföretagen en att ta betalt och mäta internetanvändning.
 
 Medan allt det där hände så höll mad på med något som kallas KOM-systemet i Sverige. Redan på 70-talet skapades Sveriges första sociala nätverk. Precis som mycket av den tidiga internet historien är den skriven i militärt intressen och KOM-systemet som det kom att heta var designat för användning av militären för internkommunikation. Men i och med att vi redan då var människor "missbrukas" det nästan direkt och alla ifrån forskare till privatpersoner kopplar upp sig och debatterar (igen något vi kan känna igen oss i fortfarande)
-
 Mycket senare kommer detta även kopplas upp mot ARPAnet och når sin höjdpunkt 87 med hela 2000 användare. Som allt tidigt på internet kommer det att dö i och med att webben blir allt större...
 
 #### Källor
@@ -73,24 +72,39 @@ Den vänstra delen i adressen ovan, alltså [https://www.]() är det som har gjo
 
 # 1990
 
-<p style="font-size:large">WWW blir nu fritt för alla att använda. Internet går från att vara  bara för nördar till att Internet blir platsen att vara om man är tonåring.<p/>
+<p style="font-size:large">WWW blir nu fritt för alla att använda. Samtidigt går internet från att vara  bara för nördar till att Internet blir platsen att vara om man är tonåring. 1999 använder över 30% av sverige internet.<p/>
 
-### Sak ett
+1993 och 1995 skapas två saker som du säkert har svårt att tänka dig använda internet utan. Dessa är, i ordning av när de kom ut, den första grafiska webbläsaren; Mosaic, och den första väl fungerande sökmotorn; Altavista.  
 
-### Lunarstorm
+### Mosaic
 
-- 1996
+Mosaic är tekniskt sätt inte den första grafiska webbläsaren, t.ex. Erwise och WorldWideWebb kom före, men det är den första att göra surfandet njutbart. Mosaic är till exempel den första att låta dig se bilder och videor tillsammans med texten så som du förväntar dig att det ska fungera idag, innan det så hade alla bilder typ den här: BILDBILD, fått sitt eget fönster. Istället för att den ligger tillsammans med texten. National Center for Supercomputing Applications (NCSA) på University of Illinois, som är dem som ligger bakom Mosaic är även dem som kommer på iden om samt är först att implementera Cookies.
 
-Lunarstorm fortsätter trenden att vara ett socialt nätverk och blir Sverige's
-första riktiga samlingsplats för alla våra internet användare.
+### Altavista
+
+Altavista blir förts ut att låta dess använder söka på alla ord som finns på en hemsida, även fraser och meningar kan man skriva in. Detta gör sidan till en dundersuccés. Man går från 300 000 sökningar första dagen (vilket bara det är helt sjukt) till över 80 miljoner dagliga sökningar två år senare. Vi i Sverige blir också först ut i att använda sidan utanför USA eftersom det är juts här Digital Equipment, företaget som driver Altavista, väljer att starta sitt internationella arbete.
+
+### Google
+
+Bara två år efter att AltaVista haft 80 miljoner sökningar om dagen lanseras det som kommer att döda sidan; Google. Google behöver ingen introduktion, det är en sökmotor och samtidigt ett internationellt mega företag som är bäst i världen på att samla in din data och sälja den till annonsörer. Detta leder till att dem också blir en av de första att käna pengar på webben, även om det inte sker för ens 2003. Viktigt också är att inte glömma att deras originella måtto som företag var "Don't be evil", något jag inte kan tänka mig de uppfyller idag,
+ 
+
+### Hem-pc-reformen
+1998 börjar hem-pc-reformen som ska göra det  möjligt för alla svenskar att ha en dator och komma ut på internet. I sin helhet kostar programmet skattebetalarna 4 miljarder kronor, men investeringen lönade sig då över en miljon svenskar får sin dator tack vare programmet. 71% hävdar också att de har förbättrat sina datorkunskaper.  
+
+#### Källor:
+[Mosaic](https://internetmuseum.se/tidslinjen/mosaic-den-grafiska-webblasaren-for-massorna/)
+[Google](https://internetmuseum.se/tidslinjen/google-fods-och-forandrar-varlden/)
+[Altavista](https://internetmuseum.se/tidslinjen/sokmotorn-altavista-gor-succe/)
+[Hem-pc-reformen](https://internetmuseum.se/tidslinjen/hem-pc-reformen-snabbar-pa-utvecklingen/)
 
 # 2000
 
 ### Flashback forum
 
-Flashback, som började som en punktidning, hade redan 1995 en hemsida med bland annat ett länkarkiv till "udda och "moraliskt tvivelaktiga" webbplatser". Bara fem år senare kommer sidan att starta sitt alleles eget forum, just flashback forum. Jag skulle bäst säga att det bäst kan liknas med en svensk variant av 4-chan... 
-Precis som alla sidor som liknats till 4-chan så har flashback forum gått igenom sin del av kontroverser. Den kanske mest uppmärksammades av dessa var då en 21 årig man tog sitt liv praktiskt taget live för alla att se i en tråd på forumet.(detta hände dock 2010 så lite senare) Samtidigt så har också sidan prisat för en tråd där man avslöjade att en någorlunda känd naturfotograf fejkat ett antal av hans bilder. 
-Med sina snara en miljon användare och 15 000 inlägg per dag är det omöjligt att hålla koll på allt som händer, vilket kanske förklarar sidans kärlek till yttrandefrihet mer än någon politisk stans. 2002 tvingas de flytta servarna utomlands på grund av en dom just kring att de praktisk taget inte har någon moderering. 
+Flashback, som började som en punktidning, hade redan 1995 en hemsida med bland annat ett länkarkiv till "udda och "moraliskt tvivelaktiga" webbplatser". Bara fem år senare kommer sidan att starta sitt alldeles eget forum, just flashback forum. Detta forum kan nog bäst liknas till en svensk variant av 4-chan, en laglös plats utan någon form av statlig (eller företaglig??) censur.
+Precis som alla sidor som liknats till 4-chan så har flashback forum gått igenom sin del av kontroverser. Den kanske mest uppmärksammades av dessa var då en 21 årig man tog sitt liv praktiskt taget live för alla att se i en tråd på forumet. (detta hände dock 2010 så lite senare) Samtidigt så har också sidan prisat för till exempel en tråd där man avslöjade att en någorlunda känd naturfotograf fejkat ett antal av hans bilder. 
+Med sina snara en miljon användare och 15 000 inlägg per dag är det omöjligt att hålla koll på allt som händer, vilket kanske förklarar sidans kärlek till yttrandefrihet mer än någon politisk stans... 2002 tvingas de flytta servarna utomlands på grund av en dom just kring att de praktisk taget inte har någon moderering. 
 ### The Pirate Bay
 
 Pirate Bay är en sida so för 20 år sedan inte krävde någon introduktion. Den har sedan 2003 varit hela världens fildelnings sajt och, enligt en av dess grundare, så stog sajten för 40% av världens internettrafik. Detta är självklart inget musik, spel eller filmindustrin tycker om och de har varit i en ständig strid om att få sidan borttagen. 2006 lyckas de till viss del då polisen utför en razzia mot webhotellet PQR där de beslagtar över 180 servar. Bara tre år efter döms de tre grundarna till ett års fängelse samt 30 miljoner kronors skadestånd.  Grundarna menar att de inte inte alls borde straffas eftersom att deras servar aldrig haft något av de material som dess användare delar. Detta åstadkommer man med hjälp av BitTorrent som låter användare dela filer mellan sig i ett sorts p2p (peer to peer) 
