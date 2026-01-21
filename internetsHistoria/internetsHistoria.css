@@ -1,15 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Sixtyfour:wght@100;300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sixtyfour&family=Sixtyfour+Convergence&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 
 .mona-sans {
   font-family: "Mona Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 @font-face {
@@ -27,6 +25,7 @@ body {
   padding: 0;
   background-color: #0d1117;
   color: white;
+  font-family: mona sans;
   a:link {
     color: rgb(255, 255, 255);
   }
@@ -49,16 +48,42 @@ body {
     margin-top: 5%;
     text-align: center;
     font-family: Sixtyfour;
+    h1 {
+      font-size: 80px;
+      margin-bottom: 1vh;
+      width: 100vw;
+      height: 10vh;
+    }
+    p {
+      width: 40vw;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10vh;
+    }
   }
+  #wrapper {
+    display: grid;
+    grid-template-areas: "toc content empty";
+
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  #wrapper div.toc-container {
+    grid-area: toc;
+  }
+  .container div.content {
+    grid-area: content;
+  }
+#wrapper div.empty{
+  grid-area: empty;
+}
+
   #toc {
-    position: sticky;
     list-style-type: none;
     font-size: large;
     font-family: mona sans;
 
-    a{
+    a {
       text-decoration: none;
-
     }
     li {
       margin: 5px;
