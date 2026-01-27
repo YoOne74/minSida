@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #212121;
+    }
+    .container {
+      background-color: #424242;
+      width: 420px;
+      height: 350px;
+      margin: 50px auto;
+      border-radius: 5px;
+      color: #fff;
+      padding: 30px 60px;
+      font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+
+    input[type="text"] {
+      width: 280px;
+      height: 35px;
+      border-radius: 2px;
+      border: none;
+    }
+    #base {
+      width: 280px;
+      height: 35px;
+      border-radius: 2px;
+    }
+    #btnConvert {
+      width: 280px;
+      height: 35px;
+      background-color: #212121;
+      color: #fff;
+      border: darkseagreen 0px solid;
+      border-radius: 2px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Convert to hex</h2>
+      <br />
+      Enter a number in decimal: <input type="text" id="txtNumber" />
+      <br />
+      <br />
+      <button id="btnConvert">Convert to hex</button>
+      <br /><br />
+      <span id="convertedValue"></span>
+    </div>
+
+    <div style="position: fixed; bottom: 20px; left: 20px">
+      <a href="../../index.html">
+        <img
+          style="height: 40px"
+          src="../../shared/celesteBadelinePFP.png"
+          alt="bild av badeline"
+        />
+      </a>
+    </div>
+  </body>
+  <script>
+    let txtNumber = document.getElementById("txtNumber");
+    let baseDDL = document.getElementById("base");
+    let convertBtn = document.getElementById("btnConvert");
+    let spanEl = document.getElementById("convertedValue");
+
+    convertBtn.addEventListener("click", function () {
+      //Number, +, parseInt
+      let num = +txtNumber.value;
+      let base = 16;
+
+      if (isNaN(num)) {
+        spanEl.textContent = "Please enter a valid number.";
+        spanEl.style.color = "#EF5350";
+      } else {
+        let convertedValue = num.toString(base);
+        spanEl.textContent = convertedValue.toUpperCase();
+        spanEl.style.color = "#81C784";
+        spanEl.style.fontWeight = "bold";
+      }
+    });
+  </script>
+</html>

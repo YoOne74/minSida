@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour:wght@100;300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* kanske funkar det nuuuuu???? */
+  background: url("../../shared/celesteBackground.jpg");
+  image-rendering: pixelated;
+  background-position: -200px 0px;
+  background-attachment: fixed;
+  font-family: sixtyfour;
+  color: rgb(255, 179, 254);
+}
+
+a {
+  all: unset;
+}
+
+.head {
+  text-align: center;
+
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  img {
+    height: 200px;
+  }
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-left: 20%;
+  margin-right: 10%;
+}
+.main {
+  border: 4px double #d428ff;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(138, 43, 226, 0.5);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  text-align: center;
+
+  img {
+    height: 100px;
+    border-radius: 10%;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10%;
+  width: 20%;
+
+  img {
+    object-fit: contain;
+    outline: none;
+  }
+}
+
+.side-button {
+  margin: 10px;
+  padding: 5px;
+
+  outline: #ff80ff dashed 5px;
+  outline-offset: -2px;
+
+  cursor: pointer;
+
+  background-color: rgb(138, 43, 226, 0.8);
+
+  font-size: large;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.side-button:hover {
+  transition: 100ms;
+  transform: scale(1.1);
+}
+
+#side-title {
+  padding: 1px;
+  margin: 5px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+
+  img {
+    margin: 20px;
+  }
+  p {
+    background-color: rgb(138, 43, 226, 0.5);
+    padding: 5px;
+    margin: 10px;
+    border: #ff80ff;
+    border-radius: 10px;
+    border-style: dashed;
+  }
+}
+
+.celeste {
+  margin: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  p {
+    background-color: rgb(138, 43, 226, 0.5);
+    padding: 5px;
+    border: #ff80ff;
+    border-radius: 10px;
+    border-style: dashed;
+  }
+}
+
+.intressen {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+
+  width: 100%;
+
+  #intresse {
+    width: 500px;
+  }
+  object-fit: contain;
+
+  .intressen-bilder {
+    border: #ff80ff dashed;
+    img {
+      height: 100px;
+    }
+  }
+}
