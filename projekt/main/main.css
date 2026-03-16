@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(content/clouds.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    margin: 0;
+
+
+
+    color: white;
+    background-color: black;
+
+    .taskbar{
+        position: fixed;
+        bottom: 0px;
+
+        width: 100vw;
+        height: 3vh;
+
+        padding: 0 1vw 0 1vw;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        background-color: gray;
+
+
+        .startButton{
+            display: flex;
+            flex-direction: row;
+        }
+
+        h1{
+            padding-top: 0;
+        }
+
+    }
+}
