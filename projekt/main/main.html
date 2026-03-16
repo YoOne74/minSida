@@ -1,29 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" href="../../shared/celesteBadelinePFP.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" href="../../shared/celesteBadelinePFP.png" />
     <title>Haiii :p</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="desktop">
-
-
-
+      <div class="desktopIcon">
+        <img src="content/cristoffer.jpg" alt="cristoffer" />
+        <p>christoffer.jpg</p>
+      </div>
     </div>
 
+    <div class="taskbar" style="z-index: 9000">
+      <button onclick="myFunction()" class="startButton">
+        <img src="content/start.png" alt="windows logo" />
+        <p>START</p>
+      </button>
 
-
-    <div class="taskbar"style="z-index: 9000;">
-        <button class="startButton">
-            <img src="content/start.png" alt="windows logo">
-            <p>START</p>
-        </button>
-        <div class="timeAndDate">
-            <h1>11:30</h1>
-        </div>
+      <div class="clock-container">
+        <p id="time">00:00:00</p>
+      </div>
     </div>
-</body>
+    <div class="startMenu">
+      <div id="startButtonContent" class="droppDownContent">
+        woow wjkw kwkw kwkwkw
+      </div>
+    </div>
+    <script>
+      //https://www.w3schools.com/howto/howto_js_dropdown.asp
+      /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("startButtonContent").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".startButton")) {
+          var dropdowns = document.getElementsByClassName("droppDownContent");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+
+      function formatTime(number) {
+        return number < 10 ? "0" + number : number;
+      }
+
+      let now = new Date();
+      let hours = formatTime(now.getHours());
+      let minutes = formatTime(now.getMinutes());
+      let seconds = formatTime(now.getSeconds());
+
+      console.log(`Current Time: ${hours}:${minutes}:${seconds}`);
+    </script>
+    <script src="main.js"></script>
+  </body>
 </html>
