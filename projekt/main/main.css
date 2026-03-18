@@ -26,6 +26,9 @@ body {
 
     padding: 10px 2px 2px 2px;
 
+    width: 100vw;
+    height: 97vh;
+
     .desktopIcon {
       height: 75px;
       width: 75px;
@@ -49,11 +52,53 @@ body {
         background-color: rgb(17, 180, 118);
       }
     }
+    .window {
+      background-color: #f1f1f1;
+      color: black;
+      height: 300px;
+      width: 300px;
+
+      position: absolute;
+
+      display: none;
+    }
+
+    #cristofferWindow .windowContent {
+      height: 270px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .topBar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      cursor: move;
+
+      height: 30px;
+      background-color: rgb(17, 180, 118);
+
+      padding: 2px;
+
+      .windowTitle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+          height: 26px;
+          padding-right: 4px;
+        }
+      }
+    }
   }
 
   .taskbar {
     position: fixed;
-    bottom: 200px;
+    bottom: 0;
 
     width: 100vw;
     height: 28px;
@@ -90,15 +135,28 @@ body {
     }
   }
 
+  .startMenu {
+    position: absolute;
+    bottom: 28px;
+
+    width: 100px;
+    height: 300px;
+  }
+
   .droppDownContent {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  .show {
-    display: block;
-  }
+}
+
+.show {
+  display: block;
+}
+
+.buttonGroup button {
+  border: none;
+  background-color: transparent;
 }

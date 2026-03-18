@@ -9,20 +9,51 @@
   </head>
   <body>
     <div class="desktop">
-      <div class="desktopIcon">
+      <div onclick="clickOnIcon('cristofferWindow')" id="temp"  class="desktopIcon">
         <img src="content/cristoffer.jpg" alt="cristoffer" />
         <p>christoffer.jpg</p>
+      </div>
+
+      <div id="cristofferWindow" class="window dragable">
+        <div class="topBar">
+          <div class="windowTitle">
+            <img src="content/cristoffer.jpg" alt="cristoffer" />
+            <p>Images</p>
+          </div>
+          <div class="buttonGroup">
+            <button onclick="hideWindow('cristofferWindow')" class="buttonHide">
+              <img src="content/minimise.png" alt="">
+            </button>
+            <button
+              onclick="fullScreenWindow('cristofferWindow')"
+              class="buttonFullscreen"
+            >
+              <img src="content/maximise.png" alt="">
+            </button>
+            <button
+              onclick="closeWindow('cristofferWindow')"
+              class="buttonClose"
+            >
+              <img src="content/close.png" alt="">
+            </button>
+          </div>
+        </div>
+
+        <div class="windowContent">
+          <img src="content/cristoffer.jpg" alt="cristoffer" />
+          
+        </div>
       </div>
     </div>
 
     <div class="taskbar" style="z-index: 9000">
-      <button onclick="myFunction()" class="startButton">
-        <img src="content/start.png" alt="windows logo" />
-        <p>START</p>
+      <button onclick="myFunction()" class="startButton target">
+        <img class="target" src="content/start.png" alt="windows logo" />
+        <p class="target">START</p>
       </button>
 
       <div class="clock-container">
-        <p id="time">00:00:00</p>
+        <p id="time">13:37</p>
       </div>
     </div>
     <div class="startMenu">
@@ -30,6 +61,7 @@
         woow wjkw kwkw kwkwkw
       </div>
     </div>
+
     <script>
       //https://www.w3schools.com/howto/howto_js_dropdown.asp
       /* When the user clicks on the button,
@@ -40,7 +72,7 @@
 
       // Close the dropdown menu if the user clicks outside of it
       window.onclick = function (event) {
-        if (!event.target.matches(".startButton")) {
+        if (!event.target.matches(".target")) {
           var dropdowns = document.getElementsByClassName("droppDownContent");
           var i;
           for (i = 0; i < dropdowns.length; i++) {
@@ -51,17 +83,6 @@
           }
         }
       };
-
-      function formatTime(number) {
-        return number < 10 ? "0" + number : number;
-      }
-
-      let now = new Date();
-      let hours = formatTime(now.getHours());
-      let minutes = formatTime(now.getMinutes());
-      let seconds = formatTime(now.getSeconds());
-
-      console.log(`Current Time: ${hours}:${minutes}:${seconds}`);
     </script>
     <script src="main.js"></script>
   </body>
