@@ -1,0 +1,17 @@
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@calendarjs/ce/dist/style.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/lemonadejs/dist/lemonade.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@calendarjs/ce/dist/index.min.js"></script>
+
+<div id='schedule' style="height: 100vh;"></div>
+
+<script>
+const { Schedule } = calendarjs;
+
+Schedule(document.getElementById('schedule'), {
+    type: 'week',
+    validRange: ['08:00', '18:00'], // 9 AM to 6 PM only
+    data: []
+});
+</script>
+</html>

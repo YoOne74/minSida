@@ -33,9 +33,9 @@ function dragElement(elmnt) {
     pos2 = 0,
     pos3 = 0,
     pos4 = 0;
-  if (document.getElementById("topBar")) {
+  if (document.getElementsByClassName("topBar")) {
     // if present, the header is where you move the DIV from:
-    document.getElementById("topBar").onmousedown = dragMouseDown;
+    document.getElementsByClassName("topBar")[0].onmousedown = dragMouseDown;
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
@@ -92,7 +92,11 @@ function hideWindow(name) {
 }
 
 function fullScreenWindow(name) {
-  // TODO
+  var x = document.getElementById(name);
+
+  x.style.height = "90vh";
+  x.style.width = "100vw";
+
 }
 
 function closeWindow(name) {

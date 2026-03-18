@@ -64,11 +64,15 @@ body {
     }
 
     #cristofferWindow .windowContent {
-      height: 270px;
+      height: calc(100%-30px);
 
       display: flex;
       justify-content: center;
       align-items: center;
+
+      img {
+        height: calc(100%-30px);
+      }
     }
 
     .topBar {
@@ -155,7 +159,9 @@ body {
 .show {
   display: block;
 }
-
+.buttonGroup {
+  display: flex;
+}
 .buttonGroup button {
   border: none;
   background-color: transparent;
