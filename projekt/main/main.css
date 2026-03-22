@@ -52,6 +52,7 @@ body {
         background-color: rgb(17, 180, 118);
       }
     }
+
     .window {
       background-color: #f1f1f1;
       color: black;
@@ -62,16 +63,17 @@ body {
 
       display: none;
     }
+    .windowContent {
+      height: calc(100% - 30px);
+    }
 
     #cristofferWindow .windowContent {
-      height: calc(100%-30px);
-
       display: flex;
       justify-content: center;
       align-items: center;
 
       img {
-        height: calc(100%-30px);
+        height: calc(90%);
       }
     }
 
