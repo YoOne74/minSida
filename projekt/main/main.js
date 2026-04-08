@@ -1,31 +1,8 @@
-//clock from:
-//https://developershaurya.com/build-digital-clock-html-css-javascript/
-function updateClock() {
-  const now = new Date();
-
-  // Time
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-
-  // Format time
-  hours = hours.toString().padStart(2, "0");
-  minutes = minutes.toString().padStart(2, "0");
-
-  document.getElementById("time").textContent = `${hours}:${minutes}`;
-}
-
-// Update every second
-//setInterval(updateClock, 1000);
-
-// Run once immediately
-//updateClock();
-
 // movable windows
 // stolen from:
 // https://www.w3schools.com/howto/howto_js_draggable.asp
 
 // Make the DIV element draggable:
-
 dragElement(document.getElementsByClassName("dragable")[0]);
 
 function dragElement(elmnt) {
@@ -72,36 +49,76 @@ function dragElement(elmnt) {
   }
 }
 
-// Hide and show window things
-function clickOnIcon(name) {
-  //toggleShow(name);
-}
 
 // Source - https://stackoverflow.com/a/53939059
-// Posted by kyw
 // Retrieved 2026-03-18, License - CC BY-SA 4.0
 
+// Make toggleShow run on double click
 icon = document.getElementById("temp");
-
 icon.addEventListener("dblclick", (e) => {
   toggleShow("cristofferWindow");
 });
 
+let state = {
+  "open": false,
+  "fullscreen":false
+};
+
 function hideWindow(name) {
+  state["open"] = false;
   toggleShow(name);
 }
 
 function fullScreenWindow(name) {
-  var x = document.getElementById(name);
+  state["fullscreen"] = true;
+  changeState(name);
+}
 
-  x.style.height = "90vh";
-  x.style.width = "100vw";
+function changeState(name) {
+  if (state["fullscreen"]==true){
+    makeFullScreen(name)
+  } else {
+    makeFloating(name)
+  }
+}
+
+
+let prevHeight=0;
+let prevWidth=0;
+
+function makeFullScreen(name){
+  var win = document.getElementById(name);
+  prevHeight=win.style.height;
+  prevWidth=win.style.width;
+  win.style.height = "90vh";
+  win.style.width = "100vw";
+  win.style.position="absolute"
+  win.style.top="0px";
+  win.style.left="0px"
 
 }
+
+function makeFloating(name) {
+  var win = document.getElementById(name);
+  win.style.height = prevHeight; 
+  win.style.width = prevWidth;
+
+}
+
 
 function closeWindow(name) {
+  state["fullscreen"]=false
+  state["open"]=false
+  
+  changeState(name)
+
+  var win = document.getElementById(name)
+  win.style.top="0px";
+  win.style.left="0px"
+
+
   toggleShow(name);
-}
+};
 
 function toggleShow(name) {
   var x = document.getElementById(name);
@@ -110,4 +127,5 @@ function toggleShow(name) {
   } else {
     x.style.display = "none";
   }
+  state[open]=true;  
 }
