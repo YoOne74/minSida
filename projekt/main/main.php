@@ -14,14 +14,14 @@
         <div id="container">
 
             <?php
-                $dir = './'; // Current directory
+                $dir = '/C'; // Current directory
                 $directories = [];
 
                 // Open the directory
                 if (is_dir($dir)) {
                     if ($dh = opendir($dir)) {
                         while (($file = readdir($dh)) !== false) {
-                            if ($file !== '.' && $file !== '..' && is_dir($dir . $file)) {
+                            if ($file !== '.' && $file !== '..' && is_dir($dir . $files) {
                                 $directories[] = $file;
                             }
                         }
@@ -34,7 +34,7 @@
                     natcasesort($directories);
                     foreach ($directories as $directory) {
                         $capitalDirectory= ucfirst($directory);
-                        echo "<div class='länkar'><a href=$directory class='link'><img src='_EXEMPEL_/php/$capitalDirectory.png' alt='bild av $capitalDirectory hemsida'><p>$capitalDirectory</p></a></div>";
+                        echo "<div class='länkar'><a href=$directory class='link'><img src='_EXEMPEL_/php/$capitalDirectory.png' alt='bild av $capitalDirectory hemsida'><p></p></a></div>";
                     }
                 } else {
                     echo "<p>Whoops! Inga undermappar hittades.</p>";

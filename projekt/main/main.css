@@ -73,7 +73,8 @@ body {
       align-items: center;
 
       img {
-        height: calc(90%);
+        max-height: 90%;
+        max-width: 90%;
       }
     }
 

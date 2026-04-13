@@ -9,29 +9,29 @@
   </head>
   <body>
     <div class="desktop">
-      <div id="temp" class="desktopIcon">
+      <div id="cristofferIcon" class="desktopIcon">
         <img src="content/cristoffer.jpg" alt="cristoffer" />
         <p>christoffer.jpg</p>
       </div>
 
-      <div id="cristofferWindow" class="window dragable">
+      <div id="cristofferWindow" class="window dragable resizable">
         <div class="topBar">
           <div class="windowTitle">
             <img src="content/cristoffer.jpg" alt="cristoffer" />
-            <p>Images</p>
+            <p>christoffer.jpg</p>
           </div>
           <div class="buttonGroup">
-            <button onclick="hideWindow('cristofferWindow')" class="buttonHide">
+            <button onclick="rightButtonGroup('cristofferWindow','hideWindow')" class="buttonHide">
               <img src="content/minimise.png" alt="" />
             </button>
             <button
-              onclick="fullScreenWindow('cristofferWindow')"
+              onclick="rightButtonGroup('cristofferWindow','fullScreenWindow')"
               class="buttonFullscreen"
             >
               <img src="content/maximise.png" alt="" />
             </button>
             <button
-              onclick="closeWindow('cristofferWindow')"
+              onclick="rightButtonGroup('cristofferWindow','closeWindow')"
               class="buttonClose"
             >
               <img src="content/close.png" alt="" />
@@ -44,7 +44,7 @@
         </div>
 
         <div
-          class="handle"
+          class="handle n-resize"
           style="
             position: absolute;
             top: 0px;
@@ -54,7 +54,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle sw-resize"
           style="
             position: absolute;
             top: 0px;
@@ -65,7 +65,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle e-resize"
           style="
             position: absolute;
             right: 0px;
@@ -76,7 +76,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle se-resize"
           style="
             position: absolute;
             bottom: 0px;
@@ -87,7 +87,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle s-resize"
           style="
             position: absolute;
             bottom: 0px;
@@ -97,7 +97,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle sw-resize"
           style="
             position: absolute;
             bottom: 0px;
@@ -108,7 +108,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle w-resize"
           style="
             position: absolute;
             top: 0px;
@@ -119,7 +119,7 @@
           "
         ></div>
         <div
-          class="handle"
+          class="handle nw-resize"
           style="
             position: absolute;
             top: 0px;
