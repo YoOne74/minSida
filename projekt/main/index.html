@@ -4,14 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <link rel="icon" href="../../shared/celesteBadelinePFP.png" >
+    <link rel="icon" href="../../shared/celesteBadelinePFP.png" />
     <title>Haiii :p</title>
   </head>
   <body>
+    <video autoplay loop id="backgroundVideo">
+      <source
+        src="content/Celeste Summit Ending Live Wallpaper.mp4"
+        type="video/mp4"
+      />
+    </video>
+
     <div class="desktop">
       <div id="cristofferIcon" class="desktopIcon">
         <img src="content/cristoffer.jpg" alt="cristoffer" />
         <p>christoffer.jpg</p>
+      </div>
+      <div id="aboutMeIcon" class="desktopIcon">
+        <img src="content/archLogo.png" alt="archlogo" />
+        <p>welcome.txt</p>
+      </div>
+      <div id="aboutme" class="desktopIcon">
+        <img src="content/archLogo.png" alt="archlogo" />
+        <p>abooutme.html</p>
+      </div>
+
+      <div id="linksFolderIcon" class="desktopIcon">
+        <img src="content/folder.png" alt="folder icon" />
+        <p>links</p>
       </div>
 
       <div id="cristofferWindow" class="window dragable resizable">
@@ -21,17 +41,20 @@
             <p>christoffer.jpg</p>
           </div>
           <div class="buttonGroup">
-            <button onclick="rightButtonGroup('cristofferWindow','hideWindow')" class="buttonHide">
+            <button
+              onclick="rightButtonGroup('cristofferWindow', 'hideWindow')"
+              class="buttonHide"
+            >
               <img src="content/minimise.png" alt="" />
             </button>
             <button
-              onclick="rightButtonGroup('cristofferWindow','fullScreenWindow')"
+              onclick="rightButtonGroup('cristofferWindow', 'fullScreenWindow')"
               class="buttonFullscreen"
             >
               <img src="content/maximise.png" alt="" />
             </button>
             <button
-              onclick="rightButtonGroup('cristofferWindow','closeWindow')"
+              onclick="rightButtonGroup('cristofferWindow', 'closeWindow')"
               class="buttonClose"
             >
               <img src="content/close.png" alt="" />
@@ -54,7 +77,7 @@
           "
         ></div>
         <div
-          class="handle sw-resize"
+          class="handle ne-resize"
           style="
             position: absolute;
             top: 0px;
@@ -133,47 +156,20 @@
     </div>
 
     <div class="taskbar" style="z-index: 9000">
-      <button onclick="myFunction()" class="startButton target">
-        <img class="target" src="content/start.png" alt="windows logo" />
-        <p class="target">START</p>
+      <button onclick="startButton()" class="startButton">
+        <img class="target" src="content/archLogo.png" alt="windows logo" />
       </button>
 
       <div class="clock-container">
         <p id="time">13:37</p>
       </div>
     </div>
-    <div class="startMenu">
-      <div id="startButtonContent" class="droppDownContent">
-        woow wjkw kwkw kwkwkw
+    <div id="startButtonContent" class="droppDownContent target">
+      <div id="searchBar">
+        <input class="target" type="text" name="wo" placeholder="search:" />
       </div>
     </div>
 
-    <style>
-
-    </style>    
-
-<script>
-      //https://www.w3schools.com/howto/howto_js_dropdown.asp
-      /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-      function myFunction() {
-        document.getElementById("startButtonContent").classList.toggle("show");
-      }
-
-      // Close the dropdown menu if the user clicks outside of it
-      window.onclick = function (event) {
-        if (!event.target.matches(".target")) {
-          var dropdowns = document.getElementsByClassName("droppDownContent");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
-        }
-      };
-    </script>
     <script src="main.js"></script>
   </body>
 </html>

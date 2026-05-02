@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dagar kvar...</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="mainCountdown">
+        <h1>Time left:</h1>
+        <p id="timeleftD"></p>
+        <p id="timeleftH"></p>
+        <p id="timeleftM"></p>
+        <p id="timeleftS"></p>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      .container {
+        height: 100vh;
+        width: 100vw;
+        margin: auto;
+      }
+    }
+    #mainCountdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 50vw;
+      height: 50vh;
+      color: white;
+      margin: auto;
+      margin-top: 25vh;
+    }
+  </style>
+  <script>
+    function display() {
+      function calculateDaysFromToday(endDate) {
+        let currentDate = new Date();
+        let end = new Date(endDate);
+        let timeDifference = end - currentDate;
+        let daysDifference = timeDifference / (1000 * 3600 * 24);
+        return daysDifference;
+      }
+
+      // Example usage
+      let endDate = "2026-08-19";
+      let daysUntilEndDate = Math.ceil(calculateDaysFromToday(endDate));
+      let hoursUntilEndDate = Math.ceil(calculateDaysFromToday(endDate) * 24);
+      let minutesUntilEndDate = Math.ceil(calculateDaysFromToday(endDate) * 60);
+      let secondsUntilEndDate = Math.ceil(
+        calculateDaysFromToday(endDate) * 24 * 3600,
+      );
+
+      document.getElementById("timeleftD").textContent =
+        `Days left: ${daysUntilEndDate}`;
+      document.getElementById("timeleftH").textContent =
+        `Hours left: ${hoursUntilEndDate}`;
+      document.getElementById("timeleftM").textContent =
+        `Minutes left: ${minutesUntilEndDate}`;
+      document.getElementById("timeleftS").textContent =
+        `Seconds left: ${secondsUntilEndDate}`;
+    }
+
+    var t = setInterval(display, 1000);
+  </script>
+</html>

@@ -3,21 +3,31 @@
   image-rendering: pixelated;
 }
 
+:root {
+  --main-accent-dark: #aa04c7;
+  --main-accent-darker: #5b006e;
+  --main-accent-darker-translucent: rgb(91, 0, 110, 0.7);
+}
+
 @font-face {
   font-family: win98;
   src: url("content/MSW98UI-Regular.otf");
 }
 
-body {
-  background-image: url(content/clouds.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+#backgroundVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
 
+body {
   font-family: win98;
   margin: 0;
 
   color: white;
-  background-color: black;
 
   .desktop {
     display: flex;
@@ -27,7 +37,7 @@ body {
     padding: 10px 2px 2px 2px;
 
     width: 100vw;
-    height: 97vh;
+    height: calc(100vh - 45px);
 
     .desktopIcon {
       height: 75px;
@@ -49,13 +59,13 @@ body {
         overflow-wrap: break-word;
         max-width: 75px;
         color: rgb(255, 255, 255);
-        background-color: rgb(17, 180, 118);
+        background-color: var(--main-accent-dark);
       }
     }
 
     .window {
-      background-color: #f1f1f1;
-      color: black;
+      background-color: #0f0012;
+      color: white;
       height: 300px;
       width: 300px;
 
@@ -64,7 +74,7 @@ body {
       display: none;
     }
     .windowContent {
-      height: calc(100% - 30px);
+      height: calc(100% - 45px);
     }
 
     #cristofferWindow .windowContent {
@@ -86,7 +96,7 @@ body {
       cursor: move;
 
       height: 30px;
-      background-color: rgb(17, 180, 118);
+      background-color: var(--main-accent-darker-translucent);
 
       padding: 2px;
 
@@ -108,35 +118,35 @@ body {
     bottom: 0;
 
     width: 100vw;
-    height: 28px;
+    height: 45px;
+
     padding: 0 1vw 0 1vw;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: rgb(206, 206, 206);
+    justify-content: center;
+
+    background-color: var(--main-accent-darker-translucent);
 
     .startButton {
-      display: flex;
-      flex-direction: row;
       cursor: pointer;
-
-      width: 100px;
-
+      width: 45px;
       border: none;
+      background-color: rgb(0, 0, 0, 0);
 
-      p {
-        margin-left: 6px;
-        margin-top: 6px;
-        font-family: win98;
-        font-size: 14px;
+      img {
+        max-height: 30px;
+        max-width: 30px;
       }
     }
 
     .clock-container {
-      color: black;
+      color: white;
+      position: absolute;
+      right: 0;
+      margin-right: 10px;
       p {
-        margin-top: 4px;
+        margin-top: 14px;
         font-size: 20px;
       }
     }
@@ -152,19 +162,51 @@ body {
 
   .droppDownContent {
     display: none;
+
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
+    left: 40vw;
+    bottom: 55px;
+
+    padding: 20px;
+
+    height: 50vh;
+    width: 20vw;
+
+    background-color: var(--main-accent-darker-translucent);
     z-index: 1;
+
+    #searchBar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      p {
+        margin-top: 0;
+        padding: 0 10px 0 10px;
+        width: 50%;
+        height: 50px;
+        background-color: var(--main-accent-darker);
+      }
+      input {
+        background-color: var(--main-accent-darker);
+        border: none;
+        color: white;
+        width: 100%;
+        height: 30px;
+        padding-left: 5px;
+        font-family: win98;
+        outline: none;
+        &::placeholder {
+          color: grey;
+        }
+      }
+    }
   }
 }
 
-.show {
-  display: block;
-}
 .buttonGroup {
   display: flex;
 }
+
 .buttonGroup button {
   border: none;
   background-color: transparent;
