@@ -3,42 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="" href="960px-Silly_Cat_(Character)-2266959083.ico">
     <title>Dagar kvar...</title>
-    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div id="mainCountdown">
-        <h1>Time left:</h1>
-        <p id="timeleftD"></p>
-        <p id="timeleftH"></p>
-        <p id="timeleftM"></p>
-        <p id="timeleftS"></p>
+        <h1>There is:</h1>
+        <div class="timeList">
+          <div class="timeRow">
+            <p class="time" id="timeleftD">69</p>
+            <p> days</p>
+          </div>
+          <div class="timeRow">
+            <p class="time" id="timeleftH">1337</p>
+            <p> hours</p>
+          </div>
+          <div class="timeRow">
+            <p class="time" id="timeleftM">5999</ap>
+            <p> minutes</p>
+          </div>
+          <div class="timeRow">
+            <p class="time" id="timeleftS">7654321</p>
+            <p> seconds</p>
+          </div>
+        </div>
+        <p style="text-align: end;">left until school starts on the 19:th of august</p>
       </div>
     </div>
   </body>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: black;
-      margin: 0;
+      background-color: #181a1b;
+      margin: auto;
       .container {
         height: 100vh;
         width: 100vw;
-        margin: auto;
+        top:0px;
+      #mainCountdown {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    
+        width: 50vw;
+        min-height: 70vh;
+        color: white;
+        margin:auto;
+          
+        padding-top:25vh;
+        h1 {
+          font-size: 5vh;
+          margin: 0;
+        }
+
+        .timeList {
+          display:flex;
+          flex-direction:row;
+
+          width:100%;
+
+          justify-content: space-between;
+          align-items: space-between;
+
+          .timeRow {
+            display:flex;
+            justify-content:center;
+            align-items:end;
+            width:25%;
+
+            p {
+              margin:0;
+            }
+            .time {
+              font-size:7vh;
+              margin:0;
+            }
+            #timeleftD {
+              font-size:8vh;
+            }
+            #timeleftH {
+              font-size:7vh;
+            }
+            #timeleftM {
+              font-size:6vh;
+            }
+            #timeleftS {
+              font-size:5vh;
+            }
+          }
+        }
       }
     }
-    #mainCountdown {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      width: 50vw;
-      height: 50vh;
-      color: white;
-      margin: auto;
-      margin-top: 25vh;
-    }
+  }
   </style>
   <script>
     function display() {
@@ -60,13 +121,13 @@
       );
 
       document.getElementById("timeleftD").textContent =
-        `Days left: ${daysUntilEndDate}`;
+        `${daysUntilEndDate}`;
       document.getElementById("timeleftH").textContent =
-        `Hours left: ${hoursUntilEndDate}`;
+        `${hoursUntilEndDate}`;
       document.getElementById("timeleftM").textContent =
-        `Minutes left: ${minutesUntilEndDate}`;
+        `${minutesUntilEndDate}`;
       document.getElementById("timeleftS").textContent =
-        `Seconds left: ${secondsUntilEndDate}`;
+        `${secondsUntilEndDate}`;
     }
 
     var t = setInterval(display, 1000);
