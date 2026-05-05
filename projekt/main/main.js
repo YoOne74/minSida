@@ -322,6 +322,7 @@ function aboutmewindowCreate() {
 
   content = win.getElementsByClassName("windowContent")[0];
   content.innerHTML = `
+    <p>I am a student in whats basically swedens highschool system, and i am taking a line that is very technicaly focoused</p>
     <p>Here are some links:</p>
     <ul>
       <li> tumblr </li>
@@ -335,6 +336,116 @@ function aboutmewindowCreate() {
 icon = document.getElementById("aboutme");
 icon.addEventListener("dblclick", () => {
   aboutmewindowCreate();
+});
+
+function linksWindowCreate() {
+  desktop = document.getElementsByClassName("desktop")[0];
+  const win = document.createElement("div");
+  win.classList.add("window");
+  // win.classList.add('fullscreen');
+  win.id = "links";
+  windowCount = 1;
+  zIndexCounter = 1;
+
+  win.style.width = "400px";
+  win.style.height = "400px";
+  win.style.top = `${50 + windowCount * 20}px`;
+  win.style.left = `${50 + windowCount * 20}px`;
+  win.style.zIndex = ++zIndexCounter;
+  win.style.display = "block";
+
+  // Inject all 8 edge/corner handles
+  win.innerHTML = `
+        <div class="resize-handle n"></div>
+        <div class="resize-handle s"></div>
+        <div class="resize-handle e"></div>
+        <div class="resize-handle w"></div>
+        <div class="resize-handle nw"></div>
+        <div class="resize-handle ne"></div>
+        <div class="resize-handle sw"></div>
+        <div class="resize-handle se"></div>
+
+
+        <div class="topBar">
+          <div class="windowTitle">
+            <img src="content/archLogo.png" alt="archLogo" />
+            <p>FakeFox</p>
+          </div>
+          <div class="buttonGroup">
+            <button 
+              onclick="rightButtonGroup('links','hideWindow')" 
+              class="buttonHide">
+              <img src="content/minimise.png" alt="" />
+            </button>
+            <button
+              onclick="rightButtonGroup('links','fullScreenWindow')"
+              class="buttonFullscreen"
+            >
+              <img src="content/maximise.png" alt="" />
+            </button>
+            <button
+              onclick="rightButtonGroup('links','closeWindow')"
+              class="buttonClose"
+            >
+              <img src="content/close.png" alt="" />
+            </button>
+          </div>
+          </div>
+        <div style="padding: 10px" class="windowContent">
+
+        </div>
+    `;
+
+  content = win.getElementsByClassName("windowContent")[0];
+  content.innerHTML = `
+   <div class="folderWindowTopBar" style="display:flex;flex-direction:row;height:10%;width:100%;">
+      <div class="folderTopLeft"style="display:flex;flex-direction:row;width:70%;">
+        <p>C:\\</p>
+        <p>Users\\</p>
+        <p>Oupper\\</p>
+        <p>Desktop\\</p>
+        <p>links</p>
+      </div>
+      <div class="folderTopRight">
+       <input class="target" type="text" name="wo" placeholder="search:" />
+      </div>
+    </div>
+    <div class="folderMainContent">
+      <div id="link1" class="linkInFolderIcon">
+        <img src="content/archLogo.png" alt="cristoffer" />
+        <p>my_old_main_page.html</p>
+      </div>
+
+      <div id="link2" class="linkInFolderIcon">
+        <img src="content/archLogo.png" alt="cristoffer" />
+        <p>my_otehr_projects.html</p>
+      </div>
+
+      <div id="link3" class="linkInFolderIcon">
+        <img src="content/cristoffer.jpg" alt="cristoffer" />
+        <p>somethign_else.html</p>
+     </div>
+    </div>
+`;
+  desktop.appendChild(win);
+  icon = document.getElementById("link1");
+  icon.addEventListener("dblclick", () => {
+    window.location.href = "https://yoone74.github.io/minSida/";
+  });
+}
+
+icon = document.getElementById("linksFolderIcon");
+icon.addEventListener("dblclick", () => {
+  linksWindowCreate();
+});
+
+icon = document.getElementById("link2");
+icon.addEventListener("dblclick", () => {
+  linksWindowCreate();
+});
+icon = document.getElementById("link3");
+icon.addEventListener("dblclick", () => {
+  linksWindowCreate();
 });
 
 let prevHeight = 0;
