@@ -200,6 +200,63 @@ body {
         }
       }
     }
+    .startMenu {
+      width: 85%;
+      height: 80%;
+
+      top: 20%;
+
+      overflow: scroll;
+      overflow: hidden;
+
+      .favoritesList {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+
+        .favorite {
+          height: 50px;
+
+          a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            text-decoration: none;
+            color: white;
+
+            p {
+              margin: 0;
+              font-size: 100%;
+            }
+            img {
+              height: 100%;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.shutdownButtons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+
+  button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: win98;
   }
 }
 

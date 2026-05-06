@@ -168,6 +168,36 @@
       <div id="searchBar">
         <input class="target" type="text" name="wo" placeholder="search:" />
       </div>
+      <div class="startMenu">
+        <h2>Favorites:</h2>
+        <div class="favoritesList">
+          <div class="favorite">
+            <a href="https://www.tumblr.com">
+              <img src="content/tumblr.png" alt="thingy" />
+              <p>Tumblr</p>
+            </a>
+          </div>
+          <div class="favorite">
+            <a href="https://www.xkcd.com">
+              <img src="content/xkcdLogo.png" alt="thingy" />
+              <p>Xkcd!</p>
+            </a>
+          </div>
+        </div>
+        <h2>Why does this exist?</h2>
+        <p>
+          Well there is quite the simple answer, I needed to make something for
+          school and this seemed fun. I also hope to update this site ever so
+          often as I do more things
+        </p>
+      </div>
+      <div class="shutdownButtons">
+        <button id="logoutButton" onclick="">logout</button>
+        <button id="restartButton" onclick="location.reload()">restart</button>
+        <button id="shutdownButton" onclick="open(location, '_self').close()">
+          shutdown
+        </button>
+      </div>
     </div>
 
     <script src="main.js"></script>
