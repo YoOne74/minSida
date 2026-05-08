@@ -336,3 +336,66 @@ body {
     background-color: var(--main-accent-dark);
   }
 }
+
+.n-resize {
+  position: absolute;
+  top: 0px;
+  height: 4px;
+  width: calc(100% - 8px);
+  cursor: n-resize;
+}
+.ne-resize {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 4px;
+  width: 4px;
+  cursor: sw-resize;
+}
+.e-resize {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: calc(100% - 8px);
+  width: 4px;
+  cursor: e-resize;
+}
+.se-resize {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 4px;
+  width: 4px;
+  cursor: se-resize;
+}
+.s-resize {
+  position: absolute;
+  bottom: 0px;
+  height: 4px;
+  width: calc(100% - 8px);
+  cursor: s-resize;
+}
+.sw-resize {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 4px;
+  width: 4px;
+  cursor: sw-resize;
+}
+.w-resize {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: calc(100% - 8px);
+  width: 4px;
+  cursor: w-resize;
+}
+.nw-resize {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 4px;
+  width: 4px;
+  cursor: nw-resize;
+}

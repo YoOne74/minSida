@@ -1,203 +1,91 @@
-// movable windows
-// stolen from: https://www.w3schools.com/howto/howto_js_draggable.asp
+const desktop = document.getElementsByClassName("desktop")[0];
+const spawnBtn = document.getElementById("spawn-btn");
 
-// Make the DIV element draggable:
-dragElement(document.getElementsByClassName("dragable")[0]);
+let zIndexCounter = 1;
+let windowCount = 0;
 
-function dragElement(elmnt) {
-  var pos1 = 0,
-    pos2 = 0,
-    pos3 = 0,
-    pos4 = 0;
+// Draggable Logic (Unchanged from before)
+function makeDraggable(win, handle) {
+  let isDragging = false;
+  let startX, startY, startLeft, startTop;
 
-  document.getElementsByClassName("topBar")[0].onmousedown = dragMouseDown;
+  handle.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = parseInt(window.getComputedStyle(win).left, 10) || 0;
+    startTop = parseInt(window.getComputedStyle(win).top, 10) || 0;
+  });
 
-  function dragMouseDown(e) {
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
+  document.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+    win.style.left = `${startLeft + deltaX}px`;
+    win.style.top = `${startTop + deltaY}px`;
+  });
 
-  function elementDrag(e) {
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-
-    // make draging the window remove fullscreen
-    if (elmnt.classList.contains("fullscreen")) {
-      elmnt.classList.remove("fullscreen");
-      elmnt.style.height = prevHeight;
-      elmnt.style.width = prevWidth;
-
-      // this is to make the window be centered on the window,
-      // instead of it beaing in the very left
-      const rect = elmnt.getBoundingClientRect();
-      elmnt.style.left = e.clientX - rect.width / 2 + "px";
-    }
-    if (e.clientY < 10) {
-      elmnt.classList.add("canDragFullscreen");
-    } else if (!elmnt.classList.contains("canDragFullscreen")) {
-      elmnt.classList.remove("canDragFullscreen");
-    }
-
-    // set the element's new position:
-    elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-    elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-  }
-
-  function closeDragElement(e) {
-    // this code is to make the window be able to fullscreen from
-    // draging to the top of the screen
-    e.preventDefault();
-
-    if (elmnt.classList.contains("canDragFullscreen") && e.clientY < 10) {
-      fullScreenWindow(elmnt);
-      elmnt.classList.remove("canDragFullscreen");
-    }
-
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
 }
 
-//  for (let index = 0; index < document.getElementsByClassName("handle").length; index++) {
+function makeResizable(win, handles) {
+  let isResizing = false;
+  let currentHandle = "";
+  let startX, startY, startWidth, startHeight, startLeft, startTop;
 
-resizeElement(document.getElementsByClassName("resizable")[0]);
+  handles.forEach((handle) => {
+    handle.addEventListener("mousedown", (e) => {
+      isResizing = true;
+      // Get the specific direction class (e.g., 'n', 'sw', 'e')
+      currentHandle = handle.className.replace("resize-handle ", "");
 
-function resizeElement(elmnt) {
-  var oldClientX, oldClientY, curClientX, curClientY;
+      startX = e.clientX;
+      startY = e.clientY;
+      startWidth = parseInt(window.getComputedStyle(win).width, 10);
+      startHeight = parseInt(window.getComputedStyle(win).height, 10);
+      startLeft = parseInt(window.getComputedStyle(win).left, 10);
+      startTop = parseInt(window.getComputedStyle(win).top, 10);
 
-  // for (const child of elmnt.children) {
-  //  if (child.classList.contains("handle")) {
-  //    console.log(child);
-  //    child.onmousedown = TODO
-  //  }
-  // }
+      e.stopPropagation(); // Don't trigger the window's drag logic
+    });
+  });
 
-  var handle = document.getElementsByClassName("handle")[0]; // 5 = se
-  handle.onmousedown = dragRezise;
-  console.log(handle);
+  document.addEventListener("mousemove", (e) => {
+    if (!isResizing) return;
 
-  function dragRezise(event) {
-    event.preventDefault();
-    // get the mouse cursor position at startup:
-    curClientX = event.clientX;
-    curClientY = event.clientY;
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
 
-    document.onmouseup = closeResizeElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementResize;
-  }
-
-  function elementResize(event) {
-    event.preventDefault();
-
-    oldClientX = curClientX - event.clientX;
-    oldClientY = curClientY - event.clientY;
-    curClientX = event.clientX;
-    curClientY = event.clientY;
-
-    const minWidth = 100;
-    const minHeight = 200;
-
-    const rect = elmnt.getBoundingClientRect();
-
-    if (handle.classList.contains("n-resize")) {
-      if (rect.height - oldClientY > minWidth) {
-        elmnt.style.height = rect.height + oldClientY + "px";
-        elmnt.style.top = elmnt.offsetTop - oldClientY + "px";
-      }
+    if (currentHandle.includes("e")) {
+      win.style.width = `${startWidth + deltaX}px`;
     }
-
-    if (handle.classList.contains("ne-resize")) {
-      if (
-        rect.height - oldClientY > minWidth &&
-        rect.width - oldClientX > minHeight
-      ) {
-        elmnt.style.height = rect.height + oldClientY + "px";
-        elmnt.style.top = elmnt.offsetTop - oldClientY + "px";
-
-        elmnt.style.width = rect.width - oldClientX + "px";
-      }
+    if (currentHandle.includes("s")) {
+      win.style.height = `${startHeight + deltaY}px`;
     }
-
-    if (handle.classList.contains("e-resize")) {
-      if (rect.width - oldClientX > minHeight) {
-        elmnt.style.width = rect.width - oldClientX + "px";
-      }
+    if (currentHandle.includes("w")) {
+      // Dragging left changes both width and X position
+      win.style.width = `${startWidth - deltaX}px`;
+      win.style.left = `${startLeft + deltaX}px`;
     }
-
-    if (handle.classList.contains("se-resize")) {
-      if (
-        rect.height - oldClientY > minWidth &&
-        rect.width - oldClientX > minHeight
-      ) {
-        elmnt.style.height = rect.height - oldClientY + "px";
-        elmnt.style.width = rect.width - oldClientX + "px";
-      }
+    if (currentHandle.includes("n")) {
+      // Dragging up changes both height and Y position
+      win.style.height = `${startHeight - deltaY}px`;
+      win.style.top = `${startTop + deltaY}px`;
     }
+  });
 
-    if (handle.classList.contains("s-resize")) {
-      if (rect.height - oldClientY > minWidth) {
-        elmnt.style.height = rect.height - oldClientY + "px";
-        elmnt.style.top = elmnt.offsetTop + oldClientY + "px";
-      }
-    }
-
-    if (handle.classList.contains("sw-resize")) {
-      if (
-        rect.height - oldClientY > minWidth &&
-        rect.width - oldClientX > minHeight
-      ) {
-        elmnt.style.height = rect.height + oldClientY + "px";
-        elmnt.style.top = elmnt.offsetTop - oldClientY + "px";
-
-        elmnt.style.width = rect.width - oldClientX + "px";
-      }
-    }
-
-    if (handle.classList.contains("w-resize")) {
-      if (rect.width + oldClientX > minHeight) {
-        elmnt.style.width = rect.width + oldClientX + "px";
-        elmnt.style.left = elmnt.offsetLeft - oldClientX + "px";
-      }
-    }
-
-    if (handle.classList.contains("nw-resize")) {
-      if (
-        rect.height - oldClientY > minWidth &&
-        rect.width - oldClientX > minHeight
-      ) {
-        elmnt.style.height = rect.height + oldClientY + "px";
-        elmnt.style.top = elmnt.offsetTop - oldClientY + "px";
-
-        elmnt.style.width = rect.width - oldClientX + "px";
-      }
-    }
-  }
-
-  function closeResizeElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+  document.addEventListener("mouseup", () => {
+    isResizing = false;
+  });
 }
 
-function welcomewindowCreate() {
-  desktop = document.getElementsByClassName("desktop")[0];
+function welcomewindowCreate(id) {
   const win = document.createElement("div");
   win.classList.add("window");
-  win.id = "welcome.txt";
-  windowCount = 1;
-  zIndexCounter = 1;
+  win.id = id;
+  windowCount++;
 
   win.style.width = "400px";
   win.style.height = "400px";
@@ -208,14 +96,14 @@ function welcomewindowCreate() {
 
   // Inject all 8 edge/corner handles
   win.innerHTML = `
-        <div class="resize-handle n"></div>
-        <div class="resize-handle s"></div>
-        <div class="resize-handle e"></div>
-        <div class="resize-handle w"></div>
-        <div class="resize-handle nw"></div>
-        <div class="resize-handle ne"></div>
-        <div class="resize-handle sw"></div>
-        <div class="resize-handle se"></div>
+        <div class="handle n-resize"></div>
+        <div class="handle s-resize"></div>
+        <div class="handle e-resize"></div>
+        <div class="handle w-resize"></div>
+        <div class="handle nw-resize"></div>
+        <div class="handle ne-resize"></div>
+        <div class="handle sw-resize"></div>
+        <div class="handle se-resize"></div>
 
 
         <div class="topBar">
@@ -235,10 +123,7 @@ function welcomewindowCreate() {
             >
               <img src="content/maximise.png" alt="" />
             </button>
-            <button
-              onclick="rightButtonGroup('welcome.txt','closeWindow')"
-              class="buttonClose"
-            >
+            <button class="buttonClose">
               <img src="content/close.png" alt="" />
             </button>
           </div>
@@ -247,29 +132,41 @@ function welcomewindowCreate() {
 
         </div>
     `;
+  desktop.appendChild(win);
 
+  const titleBar = win.querySelector(".topBar");
+  const closeBtn = win.querySelector(".buttonClose");
+  const resizeHandles = win.querySelectorAll(".handle"); // Select all handles
+
+  win.addEventListener("mousedown", () => {
+    win.style.zIndex = ++zIndexCounter;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    win.remove();
+  });
+
+  makeDraggable(win, titleBar);
+  makeResizable(win, resizeHandles);
+}
+
+icon = document.getElementById("aboutMeIcon");
+icon.addEventListener("dblclick", (e) => {
+  welcomewindowCreate("welcome.txt");
+  win = document.getElementById("welcome.txt");
   content = win.getElementsByClassName("windowContent")[0];
   content.innerHTML = `
     <h1>Haiii welcome to my website!</h1> 
     <p> This webbsite is supposed to emulate early windows, all of my things are availible in their own windows! You can close this one and re-open it by simply pressing the arch logo in the desktop, otherwise im sure youre quite familiar with how windows works... (sadly)</p>
     <p> You can also move and resize all the windows!, isnt that coool </p>
   `;
-  desktop.appendChild(win);
-}
-
-icon = document.getElementById("aboutMeIcon");
-icon.addEventListener("dblclick", (e) => {
-  welcomewindowCreate();
 });
 
-function aboutmewindowCreate() {
-  desktop = document.getElementsByClassName("desktop")[0];
+function aboutmewindowCreate(id) {
   const win = document.createElement("div");
   win.classList.add("window");
-  // win.classList.add('fullscreen');
-  win.id = "aboutme.html";
-  windowCount = 1;
-  zIndexCounter = 1;
+  win.id = id;
+  windowCount++;
 
   win.style.width = "400px";
   win.style.height = "400px";
@@ -280,14 +177,14 @@ function aboutmewindowCreate() {
 
   // Inject all 8 edge/corner handles
   win.innerHTML = `
-        <div class="resize-handle n"></div>
-        <div class="resize-handle s"></div>
-        <div class="resize-handle e"></div>
-        <div class="resize-handle w"></div>
-        <div class="resize-handle nw"></div>
-        <div class="resize-handle ne"></div>
-        <div class="resize-handle sw"></div>
-        <div class="resize-handle se"></div>
+        <div class="handle n-resize"></div>
+        <div class="handle s-resize"></div>
+        <div class="handle e-resize"></div>
+        <div class="handle w-resize"></div>
+        <div class="handle nw-resize"></div>
+        <div class="handle ne-resize"></div>
+        <div class="handle sw-resize"></div>
+        <div class="handle se-resize"></div>
 
 
         <div class="topBar">
@@ -307,8 +204,7 @@ function aboutmewindowCreate() {
             >
               <img src="content/maximise.png" alt="" />
             </button>
-            <button
-              onclick="rightButtonGroup('aboutme.html','closeWindow')"
+            <button 
               class="buttonClose"
             >
               <img src="content/close.png" alt="" />
@@ -319,7 +215,28 @@ function aboutmewindowCreate() {
 
         </div>
     `;
+  desktop.appendChild(win);
 
+  const titleBar = win.querySelector(".topBar");
+  const closeBtn = win.querySelector(".buttonClose");
+  const resizeHandles = win.querySelectorAll(".handle"); // Select all handles
+
+  win.addEventListener("mousedown", () => {
+    win.style.zIndex = ++zIndexCounter;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    win.remove();
+  });
+
+  makeDraggable(win, titleBar);
+  makeResizable(win, resizeHandles);
+}
+
+icon = document.getElementById("aboutme");
+icon.addEventListener("dblclick", () => {
+  aboutmewindowCreate("aboutme.html");
+  win = document.getElementById("aboutme.html");
   content = win.getElementsByClassName("windowContent")[0];
   content.innerHTML = `
     <p>I am a student in whats basically swedens highschool system, and i am taking a line that is very technicaly focoused</p>
@@ -328,24 +245,14 @@ function aboutmewindowCreate() {
       <li> tumblr </li>
       <li> YouTube </li>
     </ul>
-
-`;
-  desktop.appendChild(win);
-}
-
-icon = document.getElementById("aboutme");
-icon.addEventListener("dblclick", () => {
-  aboutmewindowCreate();
+  `;
 });
 
-function linksWindowCreate() {
-  desktop = document.getElementsByClassName("desktop")[0];
+function linksWindowCreate(id) {
   const win = document.createElement("div");
   win.classList.add("window");
-  // win.classList.add('fullscreen');
-  win.id = "links";
-  windowCount = 1;
-  zIndexCounter = 1;
+  win.id = id;
+  windowCount++;
 
   win.style.width = "400px";
   win.style.height = "400px";
@@ -356,14 +263,14 @@ function linksWindowCreate() {
 
   // Inject all 8 edge/corner handles
   win.innerHTML = `
-        <div class="resize-handle n"></div>
-        <div class="resize-handle s"></div>
-        <div class="resize-handle e"></div>
-        <div class="resize-handle w"></div>
-        <div class="resize-handle nw"></div>
-        <div class="resize-handle ne"></div>
-        <div class="resize-handle sw"></div>
-        <div class="resize-handle se"></div>
+        <div class="handle n-resize"></div>
+        <div class="handle s-resize"></div>
+        <div class="handle e-resize"></div>
+        <div class="handle w-resize"></div>
+        <div class="handle nw-resize"></div>
+        <div class="handle ne-resize"></div>
+        <div class="handle sw-resize"></div>
+        <div class="handle se-resize"></div>
 
 
         <div class="topBar">
@@ -384,7 +291,6 @@ function linksWindowCreate() {
               <img src="content/maximise.png" alt="" />
             </button>
             <button
-              onclick="rightButtonGroup('links','closeWindow')"
               class="buttonClose"
             >
               <img src="content/close.png" alt="" />
@@ -395,7 +301,27 @@ function linksWindowCreate() {
 
         </div>
     `;
+  desktop.appendChild(win);
+  const titleBar = win.querySelector(".topBar");
+  const closeBtn = win.querySelector(".buttonClose");
+  const resizeHandles = win.querySelectorAll(".handle"); // Select all handles
 
+  win.addEventListener("mousedown", () => {
+    win.style.zIndex = ++zIndexCounter;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    win.remove();
+  });
+
+  makeDraggable(win, titleBar);
+  makeResizable(win, resizeHandles);
+}
+
+icon = document.getElementById("linksFolderIcon");
+icon.addEventListener("dblclick", () => {
+  linksWindowCreate("links");
+  win = document.getElementById("links");
   content = win.getElementsByClassName("windowContent")[0];
   content.innerHTML = `
    <div class="folderWindowTopBar" style="display:flex;flex-direction:row;height:10%;width:100%;">
@@ -427,42 +353,97 @@ function linksWindowCreate() {
      </div>
     </div>
 `;
-  desktop.appendChild(win);
   icon = document.getElementById("link1");
   icon.addEventListener("dblclick", () => {
     window.location.href = "https://yoone74.github.io/minSida/";
   });
+});
+
+function cristofferWindowCreate(id) {
+  const win = document.createElement("div");
+  win.classList.add("window");
+  win.id = id;
+  windowCount++;
+
+  win.style.width = "400px";
+  win.style.height = "400px";
+  win.style.top = `${50 + windowCount * 20}px`;
+  win.style.left = `${50 + windowCount * 20}px`;
+  win.style.zIndex = ++zIndexCounter;
+  win.style.display = "block";
+
+  // Inject all 8 edge/corner handles
+  win.innerHTML = `
+        <div class="handle n-resize"></div>
+        <div class="handle s-resize"></div>
+        <div class="handle e-resize"></div>
+        <div class="handle w-resize"></div>
+        <div class="handle nw-resize"></div>
+        <div class="handle ne-resize"></div>
+        <div class="handle sw-resize"></div>
+        <div class="handle se-resize"></div>
+
+
+        <div class="topBar">
+          <div class="windowTitle">
+            <img src="content/cristoffer.jpg" alt="cristoffer" />
+            <p>cristoffer.jpg</p>
+          </div>
+          <div class="buttonGroup">
+            <button 
+              onclick="rightButtonGroup('cristogfferWindow','hideWindow')" 
+              class="buttonHide">
+              <img src="content/minimise.png" alt="" />
+            </button>
+            <button
+              onclick="rightButtonGroup('cristogfferWindow','fullScreenWindow')"
+              class="buttonFullscreen"
+            >
+              <img src="content/maximise.png" alt="" />
+            </button>
+            <button
+              class="buttonClose"
+            >
+              <img src="content/close.png" alt="" />
+            </button>
+          </div>
+          </div>
+        <div style="padding: 10px" class="windowContent">
+
+        </div>
+    `;
+  desktop.appendChild(win);
+
+  const titleBar = win.querySelector(".topBar");
+  const closeBtn = win.querySelector(".buttonClose");
+  const resizeHandles = win.querySelectorAll(".handle"); // Select all handles
+
+  win.addEventListener("mousedown", () => {
+    win.style.zIndex = ++zIndexCounter;
+  });
+
+  closeBtn.addEventListener("click", () => {
+    win.remove();
+  });
+
+  makeDraggable(win, titleBar);
+  makeResizable(win, resizeHandles);
 }
 
-icon = document.getElementById("linksFolderIcon");
+icon = document.getElementById("cristofferIcon");
 icon.addEventListener("dblclick", () => {
-  linksWindowCreate();
-});
-
-icon = document.getElementById("link2");
-icon.addEventListener("dblclick", () => {
-  linksWindowCreate();
-});
-icon = document.getElementById("link3");
-icon.addEventListener("dblclick", () => {
-  linksWindowCreate();
+  cristofferWindowCreate("cristogfferWindow");
+  win = document.getElementById("cristogfferWindow");
+  content = win.getElementsByClassName("windowContent")[0];
+  content.innerHTML = `
+      <img src="content/cristoffer.jpg" alt="cristoffer" />
+   `;
 });
 
 let prevHeight = 0;
 let prevWidth = 0;
 let prevTop = 0;
 let prevLeft = 0;
-
-// Source - https://stackoverflow.com/a/53939059
-// Retrieved 2026-03-18, License - CC BY-SA 4.0
-
-// Make toggleShow run on double click
-icon = document.getElementById("cristofferIcon");
-icon.addEventListener("dblclick", (e) => {
-  chWin = document.getElementById("cristofferWindow");
-  toggleShow(chWin);
-  setPrevValues(chWin);
-});
 
 function rightButtonGroup(id, typeOfButton) {
   win = document.getElementById(id);
