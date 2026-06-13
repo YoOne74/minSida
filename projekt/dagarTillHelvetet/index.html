@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="" href="960px-Silly_Cat_(Character)-2266959083.ico">
+    <link
+      rel="icon"
+      type=""
+      href="960px-Silly_Cat_(Character)-2266959083.ico"
+    />
     <title>Dagar kvar...</title>
   </head>
   <body>
@@ -13,22 +17,24 @@
         <div class="timeList">
           <div class="timeRow">
             <p class="time" id="timeleftD">69</p>
-            <p> days</p>
+            <p>days</p>
           </div>
           <div class="timeRow">
             <p class="time" id="timeleftH">1337</p>
-            <p> hours</p>
+            <p>hours</p>
           </div>
           <div class="timeRow">
-            <p class="time" id="timeleftM">5999</ap>
-            <p> minutes</p>
+            <p class="time" id="timeleftM">5999</p>
+            <p>minutes</p>
           </div>
           <div class="timeRow">
             <p class="time" id="timeleftS">7654321</p>
-            <p> seconds</p>
+            <p>seconds</p>
           </div>
         </div>
-        <p style="text-align: end;">left until school starts on the 19:th of august</p>
+        <p style="text-align: end">
+          left until school starts on the 19:th of august
+        </p>
       </div>
     </div>
   </body>
@@ -40,66 +46,83 @@
     body {
       background-color: #181a1b;
       margin: auto;
+
       .container {
         height: 100vh;
         width: 100vw;
-        top:0px;
-      #mainCountdown {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    
-        width: 50vw;
-        min-height: 70vh;
-        color: white;
-        margin:auto;
-          
-        padding-top:25vh;
-        h1 {
-          font-size: 5vh;
-          margin: 0;
-        }
+        top: 0px;
 
-        .timeList {
-          display:flex;
-          flex-direction:row;
+        #mainCountdown {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
 
-          width:100%;
+          width: 50vw;
+          min-height: 70vh;
+          color: white;
+          margin: auto;
 
-          justify-content: space-between;
-          align-items: space-between;
+          padding-top: 25vh;
 
-          .timeRow {
-            display:flex;
-            justify-content:center;
-            align-items:end;
-            width:25%;
+          h1 {
+            font-size: 5vh;
+            margin: 0;
+          }
 
-            p {
-              margin:0;
+          .timeList {
+            display: flex;
+            flex-direction: row;
+
+            width: 100%;
+
+            justify-content: space-between;
+            align-items: space-between;
+
+            @media screen and (max-width: 1250px) {
+              flex-direction: column;
+              align-items: center;
             }
-            .time {
-              font-size:7vh;
-              margin:0;
-            }
-            #timeleftD {
-              font-size:8vh;
-            }
-            #timeleftH {
-              font-size:7vh;
-            }
-            #timeleftM {
-              font-size:6vh;
-            }
-            #timeleftS {
-              font-size:5vh;
+
+            .timeRow {
+              display: flex;
+              justify-content: center;
+              align-items: end;
+              width: 25%;
+
+              height: 100px;
+
+              p {
+                margin: 0;
+              }
+              .time {
+                font-size: 7vh;
+                margin: 0;
+              }
+              #timeleftD {
+                font-size: 8vh;
+              }
+              #timeleftH {
+                font-size: 7vh;
+              }
+              #timeleftM {
+                font-size: 6vh;
+              }
+              #timeleftS {
+                font-size: 5vh;
+              }
             }
           }
         }
       }
     }
-  }
+
+    @media screen and (max-width: 1250px) {
+      #mainCountdown .timeList .timeRow {
+        width: 100%;
+        justify-content: center;
+      }
+    }
   </style>
   <script>
     function display() {
@@ -115,15 +138,15 @@
       let endDate = "2026-08-19";
       let daysUntilEndDate = Math.ceil(calculateDaysFromToday(endDate));
       let hoursUntilEndDate = Math.ceil(calculateDaysFromToday(endDate) * 24);
-      let minutesUntilEndDate = Math.ceil(calculateDaysFromToday(endDate) * 60);
+      let minutesUntilEndDate = Math.ceil(
+        calculateDaysFromToday(endDate) * 24 * 60,
+      );
       let secondsUntilEndDate = Math.ceil(
         calculateDaysFromToday(endDate) * 24 * 3600,
       );
 
-      document.getElementById("timeleftD").textContent =
-        `${daysUntilEndDate}`;
-      document.getElementById("timeleftH").textContent =
-        `${hoursUntilEndDate}`;
+      document.getElementById("timeleftD").textContent = `${daysUntilEndDate}`;
+      document.getElementById("timeleftH").textContent = `${hoursUntilEndDate}`;
       document.getElementById("timeleftM").textContent =
         `${minutesUntilEndDate}`;
       document.getElementById("timeleftS").textContent =
